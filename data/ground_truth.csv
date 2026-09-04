@@ -1,0 +1,1001 @@
+transaction_id,injected_error_type,true_label,true_expected_net,true_explanation
+TXN100000,CLEAN,MATCH,3975.37,"Clean transaction, no discrepancy."
+TXN100001,MISSING_SETTLEMENT,EXCEPTION,7744.94,Settlement record missing entirely.
+TXN100002,CLEAN,MATCH,26042.68,"Clean transaction, no discrepancy."
+TXN100003,CLEAN,MATCH,1985.07,"Clean transaction, no discrepancy."
+TXN100004,FEE_MISMATCH,EXCEPTION,33867.22,Applied fee 973.39 does not match configured fee schedule (779.22).
+TXN100005,MISSING_SETTLEMENT,EXCEPTION,58561.83,Settlement record missing entirely.
+TXN100006,CLEAN,MATCH,20799.95,"Clean transaction, no discrepancy."
+TXN100007,CLEAN,MATCH,19700.64,"Clean transaction, no discrepancy."
+TXN100008,CLEAN,MATCH,26863.78,"Clean transaction, no discrepancy."
+TXN100009,CLEAN,MATCH,50490.84,"Clean transaction, no discrepancy."
+TXN100010,PARTIAL_SETTLEMENT,EXCEPTION,3614.18,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100011,CLEAN,MATCH,12290.89,"Clean transaction, no discrepancy."
+TXN100012,LEDGER_MISMATCH,EXCEPTION,7574.01,Merchant ledger booked 7244.25 instead of the settled net 7574.01.
+TXN100013,IDENTITY_NOISE,MATCH,5869.54,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100014,IDENTITY_NOISE,MATCH,54936.42,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100015,CLEAN,MATCH,14714.62,"Clean transaction, no discrepancy."
+TXN100016,MISSING_SETTLEMENT,EXCEPTION,50819.29,Settlement record missing entirely.
+TXN100017,TAX_MISMATCH,EXCEPTION,16888.97,Applied GST 6.52 does not match expected GST (67.11).
+TXN100018,AMOUNT_MISMATCH,EXCEPTION,26501.0,Unexplained settlement drift of 199.6 not attributable to fee/tax.
+TXN100019,CLEAN,MATCH,57661.55,"Clean transaction, no discrepancy."
+TXN100020,IDENTITY_NOISE,MATCH,3003.77,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100021,CLEAN,MATCH,56814.7,"Clean transaction, no discrepancy."
+TXN100022,CLEAN,MATCH,51566.24,"Clean transaction, no discrepancy."
+TXN100023,LEDGER_MISMATCH,EXCEPTION,42384.95,Merchant ledger booked 41995.47 instead of the settled net 42384.95.
+TXN100024,CLEAN,MATCH,36617.12,"Clean transaction, no discrepancy."
+TXN100025,CLEAN,MATCH,55650.25,"Clean transaction, no discrepancy."
+TXN100026,IDENTITY_NOISE,MATCH,14207.61,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100027,CLEAN,MATCH,44916.18,"Clean transaction, no discrepancy."
+TXN100028,CLEAN,MATCH,3152.37,"Clean transaction, no discrepancy."
+TXN100029,DATE_ANOMALY_BAD,EXCEPTION,8897.13,Settlement delayed far beyond normal processing window; requires review.
+TXN100030,DATE_ANOMALY_NORMAL,MATCH,10687.33,Settlement delayed by a few days; within normal processing window.
+TXN100031,PARTIAL_SETTLEMENT,EXCEPTION,27371.38,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100032,CLEAN,MATCH,39738.95,"Clean transaction, no discrepancy."
+TXN100033,AMOUNT_MISMATCH,EXCEPTION,37498.77,Unexplained settlement drift of 162.54 not attributable to fee/tax.
+TXN100034,DUPLICATE,EXCEPTION,6711.53,Duplicate payment record for same transaction.
+TXN100035,CLEAN,MATCH,1757.69,"Clean transaction, no discrepancy."
+TXN100036,CLEAN,MATCH,49108.9,"Clean transaction, no discrepancy."
+TXN100037,LEDGER_MISMATCH,EXCEPTION,37599.83,Merchant ledger booked 37312.61 instead of the settled net 37599.83.
+TXN100038,MISSING_SETTLEMENT,EXCEPTION,18402.36,Settlement record missing entirely.
+TXN100039,CLEAN,MATCH,5739.8,"Clean transaction, no discrepancy."
+TXN100040,CLEAN,MATCH,8193.77,"Clean transaction, no discrepancy."
+TXN100041,MISSING_BANK_CREDIT,EXCEPTION,15458.07,Settlement was booked but no corresponding bank credit was ever received.
+TXN100042,CLEAN,MATCH,56701.95,"Clean transaction, no discrepancy."
+TXN100043,LEDGER_MISMATCH,EXCEPTION,5721.94,Merchant ledger booked 5579.38 instead of the settled net 5721.94.
+TXN100044,CLEAN,MATCH,34348.78,"Clean transaction, no discrepancy."
+TXN100045,CLEAN,MATCH,1945.76,"Clean transaction, no discrepancy."
+TXN100046,CLEAN,MATCH,37614.94,"Clean transaction, no discrepancy."
+TXN100047,LEDGER_MISMATCH,EXCEPTION,8657.55,Merchant ledger booked 8258.98 instead of the settled net 8657.55.
+TXN100048,CLEAN,MATCH,23128.23,"Clean transaction, no discrepancy."
+TXN100049,AMOUNT_MISMATCH,EXCEPTION,52065.08,Unexplained settlement drift of 425.16 not attributable to fee/tax.
+TXN100050,DATE_ANOMALY_NORMAL,MATCH,13082.14,Settlement delayed by a few days; within normal processing window.
+TXN100051,CLEAN,MATCH,3997.19,"Clean transaction, no discrepancy."
+TXN100052,CLEAN,MATCH,39213.76,"Clean transaction, no discrepancy."
+TXN100053,AMOUNT_MISMATCH,EXCEPTION,46117.13,Unexplained settlement drift of -404.14 not attributable to fee/tax.
+TXN100054,BANK_AMOUNT_MISMATCH,EXCEPTION,47884.65,Bank credited 47563.62 instead of the settled net 47884.65.
+TXN100055,CLEAN,MATCH,31957.19,"Clean transaction, no discrepancy."
+TXN100056,DUPLICATE,EXCEPTION,1355.11,Duplicate payment record for same transaction.
+TXN100057,CLEAN,MATCH,15947.23,"Clean transaction, no discrepancy."
+TXN100058,CLEAN,MATCH,28316.01,"Clean transaction, no discrepancy."
+TXN100059,CLEAN,MATCH,29900.66,"Clean transaction, no discrepancy."
+TXN100060,CLEAN,MATCH,38045.31,"Clean transaction, no discrepancy."
+TXN100061,FEE_MISMATCH,EXCEPTION,40151.52,Applied fee 1272.74 does not match configured fee schedule (992.61).
+TXN100062,CLEAN,MATCH,35749.79,"Clean transaction, no discrepancy."
+TXN100063,CLEAN,MATCH,57991.35,"Clean transaction, no discrepancy."
+TXN100064,DATE_ANOMALY_BAD,EXCEPTION,46828.23,Settlement delayed far beyond normal processing window; requires review.
+TXN100065,CLEAN,MATCH,52334.73,"Clean transaction, no discrepancy."
+TXN100066,FEE_MISMATCH,EXCEPTION,42667.63,Applied fee 1203.26 does not match configured fee schedule (1054.5).
+TXN100067,CLEAN,MATCH,40497.0,"Clean transaction, no discrepancy."
+TXN100068,BANK_AMOUNT_MISMATCH,EXCEPTION,25723.69,Bank credited 25968.42 instead of the settled net 25723.69.
+TXN100069,CLEAN,MATCH,20925.75,"Clean transaction, no discrepancy."
+TXN100070,CLEAN,MATCH,20856.7,"Clean transaction, no discrepancy."
+TXN100071,CLEAN,MATCH,13576.95,"Clean transaction, no discrepancy."
+TXN100072,CLEAN,MATCH,45046.81,"Clean transaction, no discrepancy."
+TXN100073,CLEAN,MATCH,2163.96,"Clean transaction, no discrepancy."
+TXN100074,CLEAN,MATCH,841.08,"Clean transaction, no discrepancy."
+TXN100075,CLEAN,MATCH,8780.1,"Clean transaction, no discrepancy."
+TXN100076,MISSING_SETTLEMENT,EXCEPTION,24755.55,Settlement record missing entirely.
+TXN100077,CLEAN,MATCH,45519.85,"Clean transaction, no discrepancy."
+TXN100078,MISSING_BANK_CREDIT,EXCEPTION,9658.67,Settlement was booked but no corresponding bank credit was ever received.
+TXN100079,DATE_ANOMALY_NORMAL,MATCH,26155.12,Settlement delayed by a few days; within normal processing window.
+TXN100080,CLEAN,MATCH,44497.29,"Clean transaction, no discrepancy."
+TXN100081,CLEAN,MATCH,39774.11,"Clean transaction, no discrepancy."
+TXN100082,CLEAN,MATCH,13274.53,"Clean transaction, no discrepancy."
+TXN100083,CLEAN,MATCH,55246.85,"Clean transaction, no discrepancy."
+TXN100084,IDENTITY_NOISE,MATCH,942.6,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100085,AMOUNT_MISMATCH,EXCEPTION,4665.31,Unexplained settlement drift of -58.43 not attributable to fee/tax.
+TXN100086,TAX_RECORD_MISSING,EXCEPTION,41504.64,No separate tax record was filed for this transaction (compliance gap).
+TXN100087,CLEAN,MATCH,56522.19,"Clean transaction, no discrepancy."
+TXN100088,TAX_MISMATCH,EXCEPTION,26006.2,Applied GST 22.44 does not match expected GST (72.94).
+TXN100089,CLEAN,MATCH,50815.44,"Clean transaction, no discrepancy."
+TXN100090,BANK_AMOUNT_MISMATCH,EXCEPTION,30316.36,Bank credited 30544.84 instead of the settled net 30316.36.
+TXN100091,MISSING_SETTLEMENT,EXCEPTION,6482.57,Settlement record missing entirely.
+TXN100092,TAX_MISMATCH,EXCEPTION,10840.88,Applied GST 0 does not match expected GST (30.4).
+TXN100093,CLEAN,MATCH,50587.04,"Clean transaction, no discrepancy."
+TXN100094,CLEAN,MATCH,27888.05,"Clean transaction, no discrepancy."
+TXN100095,CLEAN,MATCH,29897.16,"Clean transaction, no discrepancy."
+TXN100096,CLEAN,MATCH,21870.88,"Clean transaction, no discrepancy."
+TXN100097,CLEAN,MATCH,27234.9,"Clean transaction, no discrepancy."
+TXN100098,CLEAN,MATCH,19232.41,"Clean transaction, no discrepancy."
+TXN100099,CLEAN,MATCH,6527.53,"Clean transaction, no discrepancy."
+TXN100100,CLEAN,MATCH,14853.53,"Clean transaction, no discrepancy."
+TXN100101,LEDGER_MISMATCH,EXCEPTION,22101.14,Merchant ledger booked 22294.21 instead of the settled net 22101.14.
+TXN100102,CLEAN,MATCH,4308.02,"Clean transaction, no discrepancy."
+TXN100103,CLEAN,MATCH,15084.22,"Clean transaction, no discrepancy."
+TXN100104,CLEAN,MATCH,53890.21,"Clean transaction, no discrepancy."
+TXN100105,CLEAN,MATCH,35150.8,"Clean transaction, no discrepancy."
+TXN100106,CLEAN,MATCH,47626.99,"Clean transaction, no discrepancy."
+TXN100107,TAX_RECORD_MISSING,EXCEPTION,1543.95,No separate tax record was filed for this transaction (compliance gap).
+TXN100108,CLEAN,MATCH,11694.68,"Clean transaction, no discrepancy."
+TXN100109,CLEAN,MATCH,30153.14,"Clean transaction, no discrepancy."
+TXN100110,CLEAN,MATCH,51291.12,"Clean transaction, no discrepancy."
+TXN100111,CLEAN,MATCH,9940.44,"Clean transaction, no discrepancy."
+TXN100112,CLEAN,MATCH,21544.52,"Clean transaction, no discrepancy."
+TXN100113,MISSING_SETTLEMENT,EXCEPTION,14146.67,Settlement record missing entirely.
+TXN100114,CLEAN,MATCH,39808.2,"Clean transaction, no discrepancy."
+TXN100115,LEDGER_MISMATCH,EXCEPTION,29559.06,Merchant ledger booked 29223.15 instead of the settled net 29559.06.
+TXN100116,DUPLICATE,EXCEPTION,51518.87,Duplicate payment record for same transaction.
+TXN100117,CLEAN,MATCH,5345.44,"Clean transaction, no discrepancy."
+TXN100118,CLEAN,MATCH,5783.06,"Clean transaction, no discrepancy."
+TXN100119,DATE_ANOMALY_BAD,EXCEPTION,3559.42,Settlement delayed far beyond normal processing window; requires review.
+TXN100120,LEDGER_MISMATCH,EXCEPTION,13503.52,Merchant ledger booked 13847.23 instead of the settled net 13503.52.
+TXN100121,FEE_MISMATCH,EXCEPTION,17123.3,Applied fee 640.82 does not match configured fee schedule (377.98).
+TXN100122,CLEAN,MATCH,53022.49,"Clean transaction, no discrepancy."
+TXN100123,CLEAN,MATCH,6909.05,"Clean transaction, no discrepancy."
+TXN100124,BANK_AMOUNT_MISMATCH,EXCEPTION,14313.9,Bank credited 14103.91 instead of the settled net 14313.9.
+TXN100125,LEDGER_MISMATCH,EXCEPTION,42375.52,Merchant ledger booked 42426.07 instead of the settled net 42375.52.
+TXN100126,MISSING_BANK_CREDIT,EXCEPTION,39189.29,Settlement was booked but no corresponding bank credit was ever received.
+TXN100127,CLEAN,MATCH,23130.37,"Clean transaction, no discrepancy."
+TXN100128,CLEAN,MATCH,15191.1,"Clean transaction, no discrepancy."
+TXN100129,IDENTITY_NOISE,MATCH,43214.74,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100130,CLEAN,MATCH,32139.25,"Clean transaction, no discrepancy."
+TXN100131,CLEAN,MATCH,37367.77,"Clean transaction, no discrepancy."
+TXN100132,MISSING_BANK_CREDIT,EXCEPTION,12164.4,Settlement was booked but no corresponding bank credit was ever received.
+TXN100133,CLEAN,MATCH,57673.03,"Clean transaction, no discrepancy."
+TXN100134,CLEAN,MATCH,17167.94,"Clean transaction, no discrepancy."
+TXN100135,CLEAN,MATCH,47193.18,"Clean transaction, no discrepancy."
+TXN100136,TAX_MISMATCH,EXCEPTION,56933.32,Applied GST 174.48 does not match expected GST (229.31).
+TXN100137,CLEAN,MATCH,42971.27,"Clean transaction, no discrepancy."
+TXN100138,MISSING_SETTLEMENT,EXCEPTION,19093.69,Settlement record missing entirely.
+TXN100139,MISSING_BANK_CREDIT,EXCEPTION,26317.48,Settlement was booked but no corresponding bank credit was ever received.
+TXN100140,MISSING_BANK_CREDIT,EXCEPTION,2957.57,Settlement was booked but no corresponding bank credit was ever received.
+TXN100141,CLEAN,MATCH,4837.22,"Clean transaction, no discrepancy."
+TXN100142,CLEAN,MATCH,8765.87,"Clean transaction, no discrepancy."
+TXN100143,CLEAN,MATCH,4405.86,"Clean transaction, no discrepancy."
+TXN100144,DATE_ANOMALY_NORMAL,MATCH,35579.0,Settlement delayed by a few days; within normal processing window.
+TXN100145,LEDGER_MISMATCH,EXCEPTION,31330.67,Merchant ledger booked 31053.32 instead of the settled net 31330.67.
+TXN100146,CLEAN,MATCH,29558.94,"Clean transaction, no discrepancy."
+TXN100147,DATE_ANOMALY_NORMAL,MATCH,41269.79,Settlement delayed by a few days; within normal processing window.
+TXN100148,DATE_ANOMALY_NORMAL,MATCH,8421.01,Settlement delayed by a few days; within normal processing window.
+TXN100149,AMOUNT_MISMATCH,EXCEPTION,39201.42,Unexplained settlement drift of 293.98 not attributable to fee/tax.
+TXN100150,AMOUNT_MISMATCH,EXCEPTION,29979.41,Unexplained settlement drift of -406.43 not attributable to fee/tax.
+TXN100151,CLEAN,MATCH,32603.45,"Clean transaction, no discrepancy."
+TXN100152,CLEAN,MATCH,4332.36,"Clean transaction, no discrepancy."
+TXN100153,CLEAN,MATCH,48087.11,"Clean transaction, no discrepancy."
+TXN100154,CLEAN,MATCH,27681.77,"Clean transaction, no discrepancy."
+TXN100155,CLEAN,MATCH,25689.62,"Clean transaction, no discrepancy."
+TXN100156,CLEAN,MATCH,10024.92,"Clean transaction, no discrepancy."
+TXN100157,TAX_MISMATCH,EXCEPTION,49489.44,Applied GST 140.51 does not match expected GST (204.96).
+TXN100158,CLEAN,MATCH,36897.22,"Clean transaction, no discrepancy."
+TXN100159,CLEAN,MATCH,10461.98,"Clean transaction, no discrepancy."
+TXN100160,CLEAN,MATCH,48346.67,"Clean transaction, no discrepancy."
+TXN100161,CLEAN,MATCH,45197.72,"Clean transaction, no discrepancy."
+TXN100162,BANK_AMOUNT_MISMATCH,EXCEPTION,52387.6,Bank credited 52662.27 instead of the settled net 52387.6.
+TXN100163,CLEAN,MATCH,17678.21,"Clean transaction, no discrepancy."
+TXN100164,TAX_RECORD_MISSING,EXCEPTION,24750.23,No separate tax record was filed for this transaction (compliance gap).
+TXN100165,CLEAN,MATCH,50426.93,"Clean transaction, no discrepancy."
+TXN100166,CLEAN,MATCH,44798.44,"Clean transaction, no discrepancy."
+TXN100167,CLEAN,MATCH,27681.65,"Clean transaction, no discrepancy."
+TXN100168,CLEAN,MATCH,3447.62,"Clean transaction, no discrepancy."
+TXN100169,CLEAN,MATCH,47874.8,"Clean transaction, no discrepancy."
+TXN100170,CLEAN,MATCH,29513.6,"Clean transaction, no discrepancy."
+TXN100171,LEDGER_MISMATCH,EXCEPTION,1837.83,Merchant ledger booked 1627.8 instead of the settled net 1837.83.
+TXN100172,IDENTITY_NOISE,MATCH,3416.23,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100173,DATE_ANOMALY_NORMAL,MATCH,31575.83,Settlement delayed by a few days; within normal processing window.
+TXN100174,MISSING_SETTLEMENT,EXCEPTION,21639.22,Settlement record missing entirely.
+TXN100175,CLEAN,MATCH,32557.14,"Clean transaction, no discrepancy."
+TXN100176,CLEAN,MATCH,48294.84,"Clean transaction, no discrepancy."
+TXN100177,DUPLICATE,EXCEPTION,57288.33,Duplicate payment record for same transaction.
+TXN100178,DATE_ANOMALY_NORMAL,MATCH,12084.67,Settlement delayed by a few days; within normal processing window.
+TXN100179,IDENTITY_NOISE,MATCH,42056.4,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100180,PARTIAL_SETTLEMENT,EXCEPTION,54478.04,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100181,CLEAN,MATCH,29895.89,"Clean transaction, no discrepancy."
+TXN100182,CLEAN,MATCH,48111.13,"Clean transaction, no discrepancy."
+TXN100183,CLEAN,MATCH,34230.82,"Clean transaction, no discrepancy."
+TXN100184,AMOUNT_MISMATCH,EXCEPTION,56506.58,Unexplained settlement drift of -152.39 not attributable to fee/tax.
+TXN100185,AMOUNT_MISMATCH,EXCEPTION,31026.17,Unexplained settlement drift of -116.5 not attributable to fee/tax.
+TXN100186,CLEAN,MATCH,1593.75,"Clean transaction, no discrepancy."
+TXN100187,CLEAN,MATCH,24411.74,"Clean transaction, no discrepancy."
+TXN100188,AMOUNT_MISMATCH,EXCEPTION,33185.28,Unexplained settlement drift of -219.57 not attributable to fee/tax.
+TXN100189,FEE_MISMATCH,EXCEPTION,39666.85,Applied fee 1025.73 does not match configured fee schedule (887.57).
+TXN100190,CLEAN,MATCH,16753.79,"Clean transaction, no discrepancy."
+TXN100191,DATE_ANOMALY_BAD,EXCEPTION,40725.58,Settlement delayed far beyond normal processing window; requires review.
+TXN100192,AMOUNT_MISMATCH,EXCEPTION,7546.63,Unexplained settlement drift of 453.09 not attributable to fee/tax.
+TXN100193,MISSING_SETTLEMENT,EXCEPTION,2923.58,Settlement record missing entirely.
+TXN100194,CLEAN,MATCH,12978.06,"Clean transaction, no discrepancy."
+TXN100195,MISSING_SETTLEMENT,EXCEPTION,6851.98,Settlement record missing entirely.
+TXN100196,CLEAN,MATCH,37677.17,"Clean transaction, no discrepancy."
+TXN100197,CLEAN,MATCH,6354.9,"Clean transaction, no discrepancy."
+TXN100198,AMOUNT_MISMATCH,EXCEPTION,38231.55,Unexplained settlement drift of 342.74 not attributable to fee/tax.
+TXN100199,PARTIAL_SETTLEMENT,EXCEPTION,53143.09,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100200,DATE_ANOMALY_NORMAL,MATCH,24831.41,Settlement delayed by a few days; within normal processing window.
+TXN100201,IDENTITY_NOISE,MATCH,51274.15,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100202,AMOUNT_MISMATCH,EXCEPTION,58231.97,Unexplained settlement drift of -272.26 not attributable to fee/tax.
+TXN100203,CLEAN,MATCH,11655.83,"Clean transaction, no discrepancy."
+TXN100204,CLEAN,MATCH,42113.23,"Clean transaction, no discrepancy."
+TXN100205,CLEAN,MATCH,10719.87,"Clean transaction, no discrepancy."
+TXN100206,CLEAN,MATCH,23909.97,"Clean transaction, no discrepancy."
+TXN100207,CLEAN,MATCH,54736.39,"Clean transaction, no discrepancy."
+TXN100208,CLEAN,MATCH,44491.79,"Clean transaction, no discrepancy."
+TXN100209,CLEAN,MATCH,38352.89,"Clean transaction, no discrepancy."
+TXN100210,FEE_MISMATCH,EXCEPTION,18397.2,Applied fee 493.75 does not match configured fee schedule (303.2).
+TXN100211,MISSING_SETTLEMENT,EXCEPTION,21777.61,Settlement record missing entirely.
+TXN100212,LEDGER_MISMATCH,EXCEPTION,26992.12,Merchant ledger booked 27187.67 instead of the settled net 26992.12.
+TXN100213,AMOUNT_MISMATCH,EXCEPTION,40148.61,Unexplained settlement drift of 286.48 not attributable to fee/tax.
+TXN100214,CLEAN,MATCH,48551.84,"Clean transaction, no discrepancy."
+TXN100215,CLEAN,MATCH,19602.44,"Clean transaction, no discrepancy."
+TXN100216,CLEAN,MATCH,5794.22,"Clean transaction, no discrepancy."
+TXN100217,CLEAN,MATCH,30386.32,"Clean transaction, no discrepancy."
+TXN100218,CLEAN,MATCH,42384.44,"Clean transaction, no discrepancy."
+TXN100219,CLEAN,MATCH,3137.06,"Clean transaction, no discrepancy."
+TXN100220,CLEAN,MATCH,58106.82,"Clean transaction, no discrepancy."
+TXN100221,AMOUNT_MISMATCH,EXCEPTION,45282.32,Unexplained settlement drift of 340.65 not attributable to fee/tax.
+TXN100222,CLEAN,MATCH,51256.34,"Clean transaction, no discrepancy."
+TXN100223,CLEAN,MATCH,7364.23,"Clean transaction, no discrepancy."
+TXN100224,CLEAN,MATCH,49153.6,"Clean transaction, no discrepancy."
+TXN100225,CLEAN,MATCH,48088.33,"Clean transaction, no discrepancy."
+TXN100226,TAX_RECORD_MISSING,EXCEPTION,11404.95,No separate tax record was filed for this transaction (compliance gap).
+TXN100227,CLEAN,MATCH,14443.05,"Clean transaction, no discrepancy."
+TXN100228,CLEAN,MATCH,35385.59,"Clean transaction, no discrepancy."
+TXN100229,AMOUNT_MISMATCH,EXCEPTION,14166.3,Unexplained settlement drift of 113.06 not attributable to fee/tax.
+TXN100230,CLEAN,MATCH,14220.33,"Clean transaction, no discrepancy."
+TXN100231,AMOUNT_MISMATCH,EXCEPTION,17855.56,Unexplained settlement drift of -476.83 not attributable to fee/tax.
+TXN100232,IDENTITY_NOISE,MATCH,3221.99,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100233,CLEAN,MATCH,24086.36,"Clean transaction, no discrepancy."
+TXN100234,CLEAN,MATCH,49999.96,"Clean transaction, no discrepancy."
+TXN100235,CLEAN,MATCH,33101.99,"Clean transaction, no discrepancy."
+TXN100236,IDENTITY_NOISE,MATCH,14522.55,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100237,BANK_AMOUNT_MISMATCH,EXCEPTION,31785.89,Bank credited 31641.93 instead of the settled net 31785.89.
+TXN100238,CLEAN,MATCH,28434.89,"Clean transaction, no discrepancy."
+TXN100239,IDENTITY_NOISE,MATCH,56571.65,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100240,CLEAN,MATCH,53394.41,"Clean transaction, no discrepancy."
+TXN100241,AMOUNT_MISMATCH,EXCEPTION,31641.16,Unexplained settlement drift of 167.7 not attributable to fee/tax.
+TXN100242,CLEAN,MATCH,44951.4,"Clean transaction, no discrepancy."
+TXN100243,CLEAN,MATCH,3123.36,"Clean transaction, no discrepancy."
+TXN100244,CLEAN,MATCH,32538.63,"Clean transaction, no discrepancy."
+TXN100245,CLEAN,MATCH,11917.72,"Clean transaction, no discrepancy."
+TXN100246,CLEAN,MATCH,32633.24,"Clean transaction, no discrepancy."
+TXN100247,AMOUNT_MISMATCH,EXCEPTION,10306.81,Unexplained settlement drift of 112.98 not attributable to fee/tax.
+TXN100248,CLEAN,MATCH,49148.89,"Clean transaction, no discrepancy."
+TXN100249,IDENTITY_NOISE,MATCH,8430.04,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100250,CLEAN,MATCH,29970.23,"Clean transaction, no discrepancy."
+TXN100251,DUPLICATE,EXCEPTION,1403.2,Duplicate payment record for same transaction.
+TXN100252,CLEAN,MATCH,31189.91,"Clean transaction, no discrepancy."
+TXN100253,CLEAN,MATCH,47094.22,"Clean transaction, no discrepancy."
+TXN100254,CLEAN,MATCH,11678.04,"Clean transaction, no discrepancy."
+TXN100255,CLEAN,MATCH,5049.05,"Clean transaction, no discrepancy."
+TXN100256,AMOUNT_MISMATCH,EXCEPTION,17976.09,Unexplained settlement drift of -496.25 not attributable to fee/tax.
+TXN100257,CLEAN,MATCH,22288.7,"Clean transaction, no discrepancy."
+TXN100258,BANK_AMOUNT_MISMATCH,EXCEPTION,5305.99,Bank credited 4981.46 instead of the settled net 5305.99.
+TXN100259,CLEAN,MATCH,12813.86,"Clean transaction, no discrepancy."
+TXN100260,DUPLICATE,EXCEPTION,40479.26,Duplicate payment record for same transaction.
+TXN100261,CLEAN,MATCH,54590.38,"Clean transaction, no discrepancy."
+TXN100262,MISSING_SETTLEMENT,EXCEPTION,54189.39,Settlement record missing entirely.
+TXN100263,LEDGER_MISMATCH,EXCEPTION,39627.5,Merchant ledger booked 39443.15 instead of the settled net 39627.5.
+TXN100264,DUPLICATE,EXCEPTION,6150.55,Duplicate payment record for same transaction.
+TXN100265,BANK_AMOUNT_MISMATCH,EXCEPTION,2204.52,Bank credited 2426.23 instead of the settled net 2204.52.
+TXN100266,CLEAN,MATCH,11219.73,"Clean transaction, no discrepancy."
+TXN100267,CLEAN,MATCH,46715.96,"Clean transaction, no discrepancy."
+TXN100268,CLEAN,MATCH,41630.58,"Clean transaction, no discrepancy."
+TXN100269,CLEAN,MATCH,6663.83,"Clean transaction, no discrepancy."
+TXN100270,CLEAN,MATCH,6408.78,"Clean transaction, no discrepancy."
+TXN100271,CLEAN,MATCH,6452.6,"Clean transaction, no discrepancy."
+TXN100272,DATE_ANOMALY_BAD,EXCEPTION,50556.38,Settlement delayed far beyond normal processing window; requires review.
+TXN100273,CLEAN,MATCH,33830.8,"Clean transaction, no discrepancy."
+TXN100274,CLEAN,MATCH,16154.1,"Clean transaction, no discrepancy."
+TXN100275,CLEAN,MATCH,25809.5,"Clean transaction, no discrepancy."
+TXN100276,CLEAN,MATCH,15078.02,"Clean transaction, no discrepancy."
+TXN100277,PARTIAL_SETTLEMENT,EXCEPTION,27179.7,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100278,CLEAN,MATCH,46973.29,"Clean transaction, no discrepancy."
+TXN100279,IDENTITY_NOISE,MATCH,17989.93,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100280,CLEAN,MATCH,56676.22,"Clean transaction, no discrepancy."
+TXN100281,IDENTITY_NOISE,MATCH,19486.54,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100282,IDENTITY_NOISE,MATCH,40199.44,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100283,CLEAN,MATCH,47056.52,"Clean transaction, no discrepancy."
+TXN100284,CLEAN,MATCH,37381.48,"Clean transaction, no discrepancy."
+TXN100285,CLEAN,MATCH,46105.98,"Clean transaction, no discrepancy."
+TXN100286,BANK_AMOUNT_MISMATCH,EXCEPTION,31378.18,Bank credited 31441.05 instead of the settled net 31378.18.
+TXN100287,TAX_MISMATCH,EXCEPTION,45417.72,Applied GST 62.09 does not match expected GST (127.38).
+TXN100288,CLEAN,MATCH,56469.18,"Clean transaction, no discrepancy."
+TXN100289,DATE_ANOMALY_BAD,EXCEPTION,13346.71,Settlement delayed far beyond normal processing window; requires review.
+TXN100290,MISSING_SETTLEMENT,EXCEPTION,22327.18,Settlement record missing entirely.
+TXN100291,CLEAN,MATCH,58323.39,"Clean transaction, no discrepancy."
+TXN100292,CLEAN,MATCH,7272.42,"Clean transaction, no discrepancy."
+TXN100293,IDENTITY_NOISE,MATCH,46273.27,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100294,LEDGER_MISMATCH,EXCEPTION,42637.37,Merchant ledger booked 42563.86 instead of the settled net 42637.37.
+TXN100295,CLEAN,MATCH,38049.58,"Clean transaction, no discrepancy."
+TXN100296,CLEAN,MATCH,19769.73,"Clean transaction, no discrepancy."
+TXN100297,DUPLICATE,EXCEPTION,11346.59,Duplicate payment record for same transaction.
+TXN100298,AMOUNT_MISMATCH,EXCEPTION,35059.71,Unexplained settlement drift of -367.13 not attributable to fee/tax.
+TXN100299,PARTIAL_SETTLEMENT,EXCEPTION,47202.52,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100300,CLEAN,MATCH,15819.18,"Clean transaction, no discrepancy."
+TXN100301,MISSING_SETTLEMENT,EXCEPTION,35827.06,Settlement record missing entirely.
+TXN100302,DATE_ANOMALY_BAD,EXCEPTION,36528.61,Settlement delayed far beyond normal processing window; requires review.
+TXN100303,CLEAN,MATCH,7319.51,"Clean transaction, no discrepancy."
+TXN100304,BANK_AMOUNT_MISMATCH,EXCEPTION,30245.19,Bank credited 30343.44 instead of the settled net 30245.19.
+TXN100305,CLEAN,MATCH,37587.63,"Clean transaction, no discrepancy."
+TXN100306,CLEAN,MATCH,17347.95,"Clean transaction, no discrepancy."
+TXN100307,CLEAN,MATCH,55664.87,"Clean transaction, no discrepancy."
+TXN100308,DATE_ANOMALY_NORMAL,MATCH,24371.48,Settlement delayed by a few days; within normal processing window.
+TXN100309,CLEAN,MATCH,33524.79,"Clean transaction, no discrepancy."
+TXN100310,CLEAN,MATCH,31828.34,"Clean transaction, no discrepancy."
+TXN100311,IDENTITY_NOISE,MATCH,33952.25,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100312,CLEAN,MATCH,32382.82,"Clean transaction, no discrepancy."
+TXN100313,BANK_AMOUNT_MISMATCH,EXCEPTION,51162.15,Bank credited 51020.16 instead of the settled net 51162.15.
+TXN100314,CLEAN,MATCH,12724.15,"Clean transaction, no discrepancy."
+TXN100315,CLEAN,MATCH,36380.47,"Clean transaction, no discrepancy."
+TXN100316,IDENTITY_NOISE,MATCH,35061.14,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100317,LEDGER_MISMATCH,EXCEPTION,8412.87,Merchant ledger booked 8015.5 instead of the settled net 8412.87.
+TXN100318,IDENTITY_NOISE,MATCH,41928.43,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100319,CLEAN,MATCH,36854.28,"Clean transaction, no discrepancy."
+TXN100320,MISSING_BANK_CREDIT,EXCEPTION,30293.79,Settlement was booked but no corresponding bank credit was ever received.
+TXN100321,CLEAN,MATCH,19593.07,"Clean transaction, no discrepancy."
+TXN100322,CLEAN,MATCH,49767.31,"Clean transaction, no discrepancy."
+TXN100323,CLEAN,MATCH,29327.97,"Clean transaction, no discrepancy."
+TXN100324,LEDGER_MISMATCH,EXCEPTION,46508.78,Merchant ledger booked 46593.63 instead of the settled net 46508.78.
+TXN100325,TAX_MISMATCH,EXCEPTION,26194.51,Applied GST 51.57 does not match expected GST (85.73).
+TXN100326,MISSING_BANK_CREDIT,EXCEPTION,51424.89,Settlement was booked but no corresponding bank credit was ever received.
+TXN100327,TAX_MISMATCH,EXCEPTION,5261.18,Applied GST 0 does not match expected GST (21.79).
+TXN100328,DUPLICATE,EXCEPTION,25510.75,Duplicate payment record for same transaction.
+TXN100329,PARTIAL_SETTLEMENT,EXCEPTION,28284.06,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100330,DUPLICATE,EXCEPTION,952.62,Duplicate payment record for same transaction.
+TXN100331,CLEAN,MATCH,4619.93,"Clean transaction, no discrepancy."
+TXN100332,CLEAN,MATCH,21794.48,"Clean transaction, no discrepancy."
+TXN100333,DATE_ANOMALY_BAD,EXCEPTION,4474.5,Settlement delayed far beyond normal processing window; requires review.
+TXN100334,FEE_MISMATCH,EXCEPTION,20988.35,Applied fee 589.81 does not match configured fee schedule (345.19).
+TXN100335,TAX_RECORD_MISSING,EXCEPTION,5543.1,No separate tax record was filed for this transaction (compliance gap).
+TXN100336,CLEAN,MATCH,56326.11,"Clean transaction, no discrepancy."
+TXN100337,TAX_RECORD_MISSING,EXCEPTION,14990.33,No separate tax record was filed for this transaction (compliance gap).
+TXN100338,CLEAN,MATCH,49660.64,"Clean transaction, no discrepancy."
+TXN100339,CLEAN,MATCH,17568.82,"Clean transaction, no discrepancy."
+TXN100340,CLEAN,MATCH,14576.36,"Clean transaction, no discrepancy."
+TXN100341,CLEAN,MATCH,54626.2,"Clean transaction, no discrepancy."
+TXN100342,DUPLICATE,EXCEPTION,32159.1,Duplicate payment record for same transaction.
+TXN100343,CLEAN,MATCH,1296.86,"Clean transaction, no discrepancy."
+TXN100344,CLEAN,MATCH,36898.19,"Clean transaction, no discrepancy."
+TXN100345,TAX_RECORD_MISSING,EXCEPTION,37914.87,No separate tax record was filed for this transaction (compliance gap).
+TXN100346,CLEAN,MATCH,18597.53,"Clean transaction, no discrepancy."
+TXN100347,CLEAN,MATCH,34388.96,"Clean transaction, no discrepancy."
+TXN100348,CLEAN,MATCH,40959.18,"Clean transaction, no discrepancy."
+TXN100349,IDENTITY_NOISE,MATCH,7186.57,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100350,MISSING_SETTLEMENT,EXCEPTION,1230.94,Settlement record missing entirely.
+TXN100351,CLEAN,MATCH,56125.29,"Clean transaction, no discrepancy."
+TXN100352,CLEAN,MATCH,7845.23,"Clean transaction, no discrepancy."
+TXN100353,IDENTITY_NOISE,MATCH,47274.72,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100354,FEE_MISMATCH,EXCEPTION,27060.83,Applied fee 633.5 does not match configured fee schedule (443.59).
+TXN100355,AMOUNT_MISMATCH,EXCEPTION,9606.3,Unexplained settlement drift of -353.35 not attributable to fee/tax.
+TXN100356,CLEAN,MATCH,50286.84,"Clean transaction, no discrepancy."
+TXN100357,CLEAN,MATCH,22688.24,"Clean transaction, no discrepancy."
+TXN100358,CLEAN,MATCH,19248.46,"Clean transaction, no discrepancy."
+TXN100359,CLEAN,MATCH,33883.41,"Clean transaction, no discrepancy."
+TXN100360,MISSING_SETTLEMENT,EXCEPTION,13490.08,Settlement record missing entirely.
+TXN100361,AMOUNT_MISMATCH,EXCEPTION,51046.85,Unexplained settlement drift of 88.87 not attributable to fee/tax.
+TXN100362,CLEAN,MATCH,17487.63,"Clean transaction, no discrepancy."
+TXN100363,CLEAN,MATCH,21985.88,"Clean transaction, no discrepancy."
+TXN100364,TAX_MISMATCH,EXCEPTION,861.01,Applied GST 0 does not match expected GST (2.82).
+TXN100365,DUPLICATE,EXCEPTION,571.89,Duplicate payment record for same transaction.
+TXN100366,CLEAN,MATCH,31374.0,"Clean transaction, no discrepancy."
+TXN100367,CLEAN,MATCH,41943.44,"Clean transaction, no discrepancy."
+TXN100368,CLEAN,MATCH,27063.68,"Clean transaction, no discrepancy."
+TXN100369,FEE_MISMATCH,EXCEPTION,4806.85,Applied fee 299.06 does not match configured fee schedule (123.36).
+TXN100370,CLEAN,MATCH,15605.28,"Clean transaction, no discrepancy."
+TXN100371,CLEAN,MATCH,16362.5,"Clean transaction, no discrepancy."
+TXN100372,DATE_ANOMALY_NORMAL,MATCH,6644.1,Settlement delayed by a few days; within normal processing window.
+TXN100373,CLEAN,MATCH,56406.46,"Clean transaction, no discrepancy."
+TXN100374,AMOUNT_MISMATCH,EXCEPTION,49868.77,Unexplained settlement drift of 413.42 not attributable to fee/tax.
+TXN100375,IDENTITY_NOISE,MATCH,49217.89,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100376,TAX_RECORD_MISSING,EXCEPTION,30169.25,No separate tax record was filed for this transaction (compliance gap).
+TXN100377,CLEAN,MATCH,49894.74,"Clean transaction, no discrepancy."
+TXN100378,CLEAN,MATCH,27486.21,"Clean transaction, no discrepancy."
+TXN100379,CLEAN,MATCH,8109.56,"Clean transaction, no discrepancy."
+TXN100380,IDENTITY_NOISE,MATCH,53630.94,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100381,DATE_ANOMALY_NORMAL,MATCH,5847.28,Settlement delayed by a few days; within normal processing window.
+TXN100382,CLEAN,MATCH,54320.41,"Clean transaction, no discrepancy."
+TXN100383,CLEAN,MATCH,22682.36,"Clean transaction, no discrepancy."
+TXN100384,LEDGER_MISMATCH,EXCEPTION,16507.27,Merchant ledger booked 16445.14 instead of the settled net 16507.27.
+TXN100385,DATE_ANOMALY_NORMAL,MATCH,24538.33,Settlement delayed by a few days; within normal processing window.
+TXN100386,DUPLICATE,EXCEPTION,8415.25,Duplicate payment record for same transaction.
+TXN100387,CLEAN,MATCH,57867.96,"Clean transaction, no discrepancy."
+TXN100388,CLEAN,MATCH,53394.5,"Clean transaction, no discrepancy."
+TXN100389,CLEAN,MATCH,2007.68,"Clean transaction, no discrepancy."
+TXN100390,CLEAN,MATCH,47384.93,"Clean transaction, no discrepancy."
+TXN100391,CLEAN,MATCH,6322.35,"Clean transaction, no discrepancy."
+TXN100392,AMOUNT_MISMATCH,EXCEPTION,34048.32,Unexplained settlement drift of -470.84 not attributable to fee/tax.
+TXN100393,LEDGER_MISMATCH,EXCEPTION,47222.67,Merchant ledger booked 47282.54 instead of the settled net 47222.67.
+TXN100394,CLEAN,MATCH,49262.9,"Clean transaction, no discrepancy."
+TXN100395,AMOUNT_MISMATCH,EXCEPTION,2701.17,Unexplained settlement drift of -320.75 not attributable to fee/tax.
+TXN100396,PARTIAL_SETTLEMENT,EXCEPTION,19724.75,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100397,BANK_AMOUNT_MISMATCH,EXCEPTION,3939.56,Bank credited 3642.92 instead of the settled net 3939.56.
+TXN100398,MISSING_SETTLEMENT,EXCEPTION,22318.31,Settlement record missing entirely.
+TXN100399,CLEAN,MATCH,19174.31,"Clean transaction, no discrepancy."
+TXN100400,FEE_MISMATCH,EXCEPTION,10585.57,Applied fee 512.57 does not match configured fee schedule (236.86).
+TXN100401,MISSING_BANK_CREDIT,EXCEPTION,39285.27,Settlement was booked but no corresponding bank credit was ever received.
+TXN100402,CLEAN,MATCH,10841.05,"Clean transaction, no discrepancy."
+TXN100403,DUPLICATE,EXCEPTION,11045.3,Duplicate payment record for same transaction.
+TXN100404,MISSING_SETTLEMENT,EXCEPTION,8695.99,Settlement record missing entirely.
+TXN100405,CLEAN,MATCH,37547.54,"Clean transaction, no discrepancy."
+TXN100406,TAX_RECORD_MISSING,EXCEPTION,1150.04,No separate tax record was filed for this transaction (compliance gap).
+TXN100407,TAX_RECORD_MISSING,EXCEPTION,46076.72,No separate tax record was filed for this transaction (compliance gap).
+TXN100408,CLEAN,MATCH,56515.39,"Clean transaction, no discrepancy."
+TXN100409,CLEAN,MATCH,6344.8,"Clean transaction, no discrepancy."
+TXN100410,CLEAN,MATCH,26777.11,"Clean transaction, no discrepancy."
+TXN100411,MISSING_SETTLEMENT,EXCEPTION,55614.0,Settlement record missing entirely.
+TXN100412,CLEAN,MATCH,43127.81,"Clean transaction, no discrepancy."
+TXN100413,CLEAN,MATCH,25500.7,"Clean transaction, no discrepancy."
+TXN100414,TAX_MISMATCH,EXCEPTION,3609.14,Applied GST 0 does not match expected GST (11.81).
+TXN100415,DATE_ANOMALY_NORMAL,MATCH,17714.4,Settlement delayed by a few days; within normal processing window.
+TXN100416,CLEAN,MATCH,3664.42,"Clean transaction, no discrepancy."
+TXN100417,FEE_MISMATCH,EXCEPTION,12142.47,Applied fee 319.43 does not match configured fee schedule (201.85).
+TXN100418,FEE_MISMATCH,EXCEPTION,49747.04,Applied fee 994.81 does not match configured fee schedule (811.2).
+TXN100419,MISSING_SETTLEMENT,EXCEPTION,37992.53,Settlement record missing entirely.
+TXN100420,CLEAN,MATCH,11303.23,"Clean transaction, no discrepancy."
+TXN100421,CLEAN,MATCH,13592.39,"Clean transaction, no discrepancy."
+TXN100422,CLEAN,MATCH,5498.5,"Clean transaction, no discrepancy."
+TXN100423,FEE_MISMATCH,EXCEPTION,49249.15,Applied fee 1375.73 does not match configured fee schedule (1083.29).
+TXN100424,DATE_ANOMALY_NORMAL,MATCH,17932.8,Settlement delayed by a few days; within normal processing window.
+TXN100425,DATE_ANOMALY_BAD,EXCEPTION,55951.94,Settlement delayed far beyond normal processing window; requires review.
+TXN100426,CLEAN,MATCH,2975.38,"Clean transaction, no discrepancy."
+TXN100427,MISSING_BANK_CREDIT,EXCEPTION,49076.52,Settlement was booked but no corresponding bank credit was ever received.
+TXN100428,AMOUNT_MISMATCH,EXCEPTION,32650.08,Unexplained settlement drift of 435.48 not attributable to fee/tax.
+TXN100429,CLEAN,MATCH,24705.09,"Clean transaction, no discrepancy."
+TXN100430,TAX_RECORD_MISSING,EXCEPTION,33366.21,No separate tax record was filed for this transaction (compliance gap).
+TXN100431,PARTIAL_SETTLEMENT,EXCEPTION,15752.9,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100432,CLEAN,MATCH,16532.44,"Clean transaction, no discrepancy."
+TXN100433,CLEAN,MATCH,23440.01,"Clean transaction, no discrepancy."
+TXN100434,CLEAN,MATCH,54246.43,"Clean transaction, no discrepancy."
+TXN100435,DATE_ANOMALY_NORMAL,MATCH,16726.51,Settlement delayed by a few days; within normal processing window.
+TXN100436,TAX_MISMATCH,EXCEPTION,56920.68,Applied GST 196.88 does not match expected GST (235.74).
+TXN100437,CLEAN,MATCH,26238.57,"Clean transaction, no discrepancy."
+TXN100438,CLEAN,MATCH,30369.38,"Clean transaction, no discrepancy."
+TXN100439,MISSING_BANK_CREDIT,EXCEPTION,45954.79,Settlement was booked but no corresponding bank credit was ever received.
+TXN100440,CLEAN,MATCH,51506.21,"Clean transaction, no discrepancy."
+TXN100441,CLEAN,MATCH,3436.56,"Clean transaction, no discrepancy."
+TXN100442,TAX_MISMATCH,EXCEPTION,48225.32,Applied GST 129.75 does not match expected GST (194.23).
+TXN100443,MISSING_BANK_CREDIT,EXCEPTION,22201.83,Settlement was booked but no corresponding bank credit was ever received.
+TXN100444,IDENTITY_NOISE,MATCH,20443.05,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100445,CLEAN,MATCH,3350.92,"Clean transaction, no discrepancy."
+TXN100446,FEE_MISMATCH,EXCEPTION,16175.37,Applied fee 368.39 does not match configured fee schedule (283.98).
+TXN100447,DATE_ANOMALY_NORMAL,MATCH,53702.33,Settlement delayed by a few days; within normal processing window.
+TXN100448,CLEAN,MATCH,41773.91,"Clean transaction, no discrepancy."
+TXN100449,FEE_MISMATCH,EXCEPTION,27094.98,Applied fee 752.74 does not match configured fee schedule (606.27).
+TXN100450,AMOUNT_MISMATCH,EXCEPTION,920.26,Unexplained settlement drift of 341.3 not attributable to fee/tax.
+TXN100451,PARTIAL_SETTLEMENT,EXCEPTION,4211.76,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100452,CLEAN,MATCH,11397.97,"Clean transaction, no discrepancy."
+TXN100453,CLEAN,MATCH,39950.16,"Clean transaction, no discrepancy."
+TXN100454,AMOUNT_MISMATCH,EXCEPTION,53021.72,Unexplained settlement drift of -381.53 not attributable to fee/tax.
+TXN100455,IDENTITY_NOISE,MATCH,53411.06,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100456,TAX_MISMATCH,EXCEPTION,6140.66,Applied GST 0 does not match expected GST (25.43).
+TXN100457,DATE_ANOMALY_NORMAL,MATCH,38424.33,Settlement delayed by a few days; within normal processing window.
+TXN100458,LEDGER_MISMATCH,EXCEPTION,22033.35,Merchant ledger booked 21821.03 instead of the settled net 22033.35.
+TXN100459,CLEAN,MATCH,28080.77,"Clean transaction, no discrepancy."
+TXN100460,CLEAN,MATCH,24416.97,"Clean transaction, no discrepancy."
+TXN100461,DATE_ANOMALY_BAD,EXCEPTION,57561.37,Settlement delayed far beyond normal processing window; requires review.
+TXN100462,CLEAN,MATCH,19904.85,"Clean transaction, no discrepancy."
+TXN100463,LEDGER_MISMATCH,EXCEPTION,26702.98,Merchant ledger booked 26451.28 instead of the settled net 26702.98.
+TXN100464,CLEAN,MATCH,36283.09,"Clean transaction, no discrepancy."
+TXN100465,CLEAN,MATCH,22864.13,"Clean transaction, no discrepancy."
+TXN100466,IDENTITY_NOISE,MATCH,52219.16,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100467,IDENTITY_NOISE,MATCH,13679.42,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100468,CLEAN,MATCH,10161.82,"Clean transaction, no discrepancy."
+TXN100469,CLEAN,MATCH,25626.46,"Clean transaction, no discrepancy."
+TXN100470,CLEAN,MATCH,10101.31,"Clean transaction, no discrepancy."
+TXN100471,CLEAN,MATCH,12791.39,"Clean transaction, no discrepancy."
+TXN100472,IDENTITY_NOISE,MATCH,21909.36,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100473,CLEAN,MATCH,34931.13,"Clean transaction, no discrepancy."
+TXN100474,DATE_ANOMALY_NORMAL,MATCH,40488.78,Settlement delayed by a few days; within normal processing window.
+TXN100475,CLEAN,MATCH,41462.36,"Clean transaction, no discrepancy."
+TXN100476,IDENTITY_NOISE,MATCH,24866.72,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100477,TAX_RECORD_MISSING,EXCEPTION,48509.99,No separate tax record was filed for this transaction (compliance gap).
+TXN100478,CLEAN,MATCH,7091.22,"Clean transaction, no discrepancy."
+TXN100479,CLEAN,MATCH,48653.26,"Clean transaction, no discrepancy."
+TXN100480,FEE_MISMATCH,EXCEPTION,2784.9,Applied fee 282.03 does not match configured fee schedule (50.63).
+TXN100481,CLEAN,MATCH,649.46,"Clean transaction, no discrepancy."
+TXN100482,FEE_MISMATCH,EXCEPTION,55794.98,Applied fee 1253.64 does not match configured fee schedule (1014.46).
+TXN100483,AMOUNT_MISMATCH,EXCEPTION,27114.97,Unexplained settlement drift of -258.92 not attributable to fee/tax.
+TXN100484,CLEAN,MATCH,21353.05,"Clean transaction, no discrepancy."
+TXN100485,MISSING_SETTLEMENT,EXCEPTION,1045.98,Settlement record missing entirely.
+TXN100486,CLEAN,MATCH,21212.79,"Clean transaction, no discrepancy."
+TXN100487,AMOUNT_MISMATCH,EXCEPTION,47730.15,Unexplained settlement drift of 230.35 not attributable to fee/tax.
+TXN100488,CLEAN,MATCH,47185.77,"Clean transaction, no discrepancy."
+TXN100489,MISSING_BANK_CREDIT,EXCEPTION,57413.58,Settlement was booked but no corresponding bank credit was ever received.
+TXN100490,CLEAN,MATCH,11067.37,"Clean transaction, no discrepancy."
+TXN100491,IDENTITY_NOISE,MATCH,28629.01,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100492,CLEAN,MATCH,15775.91,"Clean transaction, no discrepancy."
+TXN100493,FEE_MISMATCH,EXCEPTION,30579.05,Applied fee 859.45 does not match configured fee schedule (684.22).
+TXN100494,MISSING_SETTLEMENT,EXCEPTION,38962.06,Settlement record missing entirely.
+TXN100495,FEE_MISMATCH,EXCEPTION,37800.53,Applied fee 1098.69 does not match configured fee schedule (831.94).
+TXN100496,DATE_ANOMALY_BAD,EXCEPTION,44393.87,Settlement delayed far beyond normal processing window; requires review.
+TXN100497,CLEAN,MATCH,32579.55,"Clean transaction, no discrepancy."
+TXN100498,CLEAN,MATCH,26418.1,"Clean transaction, no discrepancy."
+TXN100499,AMOUNT_MISMATCH,EXCEPTION,18937.55,Unexplained settlement drift of -344.02 not attributable to fee/tax.
+TXN100500,CLEAN,MATCH,32797.22,"Clean transaction, no discrepancy."
+TXN100501,TAX_RECORD_MISSING,EXCEPTION,38647.82,No separate tax record was filed for this transaction (compliance gap).
+TXN100502,CLEAN,MATCH,49707.14,"Clean transaction, no discrepancy."
+TXN100503,CLEAN,MATCH,41988.23,"Clean transaction, no discrepancy."
+TXN100504,TAX_RECORD_MISSING,EXCEPTION,20282.88,No separate tax record was filed for this transaction (compliance gap).
+TXN100505,CLEAN,MATCH,3165.6,"Clean transaction, no discrepancy."
+TXN100506,DATE_ANOMALY_NORMAL,MATCH,15348.02,Settlement delayed by a few days; within normal processing window.
+TXN100507,FEE_MISMATCH,EXCEPTION,48625.21,Applied fee 947.37 does not match configured fee schedule (793.02).
+TXN100508,MISSING_SETTLEMENT,EXCEPTION,45604.17,Settlement record missing entirely.
+TXN100509,AMOUNT_MISMATCH,EXCEPTION,737.97,Unexplained settlement drift of 470.89 not attributable to fee/tax.
+TXN100510,DATE_ANOMALY_NORMAL,MATCH,43041.0,Settlement delayed by a few days; within normal processing window.
+TXN100511,CLEAN,MATCH,24688.02,"Clean transaction, no discrepancy."
+TXN100512,CLEAN,MATCH,56196.89,"Clean transaction, no discrepancy."
+TXN100513,FEE_MISMATCH,EXCEPTION,35319.15,Applied fee 1139.25 does not match configured fee schedule (873.77).
+TXN100514,CLEAN,MATCH,12200.16,"Clean transaction, no discrepancy."
+TXN100515,AMOUNT_MISMATCH,EXCEPTION,57652.55,Unexplained settlement drift of 276.75 not attributable to fee/tax.
+TXN100516,CLEAN,MATCH,34511.08,"Clean transaction, no discrepancy."
+TXN100517,CLEAN,MATCH,47217.78,"Clean transaction, no discrepancy."
+TXN100518,CLEAN,MATCH,3580.55,"Clean transaction, no discrepancy."
+TXN100519,CLEAN,MATCH,40073.74,"Clean transaction, no discrepancy."
+TXN100520,CLEAN,MATCH,21287.71,"Clean transaction, no discrepancy."
+TXN100521,CLEAN,MATCH,14218.24,"Clean transaction, no discrepancy."
+TXN100522,FEE_MISMATCH,EXCEPTION,22889.18,Applied fee 659.91 does not match configured fee schedule (568.07).
+TXN100523,AMOUNT_MISMATCH,EXCEPTION,48942.19,Unexplained settlement drift of 369.3 not attributable to fee/tax.
+TXN100524,CLEAN,MATCH,17638.17,"Clean transaction, no discrepancy."
+TXN100525,DUPLICATE,EXCEPTION,43308.07,Duplicate payment record for same transaction.
+TXN100526,CLEAN,MATCH,32729.04,"Clean transaction, no discrepancy."
+TXN100527,LEDGER_MISMATCH,EXCEPTION,19656.83,Merchant ledger booked 19760.63 instead of the settled net 19656.83.
+TXN100528,LEDGER_MISMATCH,EXCEPTION,28903.07,Merchant ledger booked 29078.4 instead of the settled net 28903.07.
+TXN100529,CLEAN,MATCH,30814.95,"Clean transaction, no discrepancy."
+TXN100530,CLEAN,MATCH,20905.12,"Clean transaction, no discrepancy."
+TXN100531,BANK_AMOUNT_MISMATCH,EXCEPTION,17505.46,Bank credited 17289.26 instead of the settled net 17505.46.
+TXN100532,AMOUNT_MISMATCH,EXCEPTION,14517.11,Unexplained settlement drift of -463.37 not attributable to fee/tax.
+TXN100533,CLEAN,MATCH,53441.03,"Clean transaction, no discrepancy."
+TXN100534,MISSING_BANK_CREDIT,EXCEPTION,53340.23,Settlement was booked but no corresponding bank credit was ever received.
+TXN100535,CLEAN,MATCH,3044.93,"Clean transaction, no discrepancy."
+TXN100536,TAX_MISMATCH,EXCEPTION,10271.14,Applied GST 8.3 does not match expected GST (28.81).
+TXN100537,MISSING_BANK_CREDIT,EXCEPTION,50909.91,Settlement was booked but no corresponding bank credit was ever received.
+TXN100538,IDENTITY_NOISE,MATCH,44128.66,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100539,TAX_MISMATCH,EXCEPTION,4770.55,Applied GST 0 does not match expected GST (13.38).
+TXN100540,CLEAN,MATCH,24099.85,"Clean transaction, no discrepancy."
+TXN100541,CLEAN,MATCH,1466.29,"Clean transaction, no discrepancy."
+TXN100542,DATE_ANOMALY_BAD,EXCEPTION,41134.43,Settlement delayed far beyond normal processing window; requires review.
+TXN100543,CLEAN,MATCH,35623.51,"Clean transaction, no discrepancy."
+TXN100544,BANK_AMOUNT_MISMATCH,EXCEPTION,27975.12,Bank credited 28072.85 instead of the settled net 27975.12.
+TXN100545,CLEAN,MATCH,17851.37,"Clean transaction, no discrepancy."
+TXN100546,CLEAN,MATCH,2931.6,"Clean transaction, no discrepancy."
+TXN100547,TAX_RECORD_MISSING,EXCEPTION,12654.58,No separate tax record was filed for this transaction (compliance gap).
+TXN100548,CLEAN,MATCH,11207.12,"Clean transaction, no discrepancy."
+TXN100549,CLEAN,MATCH,39574.14,"Clean transaction, no discrepancy."
+TXN100550,CLEAN,MATCH,17472.57,"Clean transaction, no discrepancy."
+TXN100551,CLEAN,MATCH,56039.1,"Clean transaction, no discrepancy."
+TXN100552,CLEAN,MATCH,17150.34,"Clean transaction, no discrepancy."
+TXN100553,CLEAN,MATCH,19654.77,"Clean transaction, no discrepancy."
+TXN100554,MISSING_SETTLEMENT,EXCEPTION,47309.03,Settlement record missing entirely.
+TXN100555,CLEAN,MATCH,46287.86,"Clean transaction, no discrepancy."
+TXN100556,CLEAN,MATCH,40075.22,"Clean transaction, no discrepancy."
+TXN100557,CLEAN,MATCH,45399.93,"Clean transaction, no discrepancy."
+TXN100558,CLEAN,MATCH,49673.38,"Clean transaction, no discrepancy."
+TXN100559,CLEAN,MATCH,42991.38,"Clean transaction, no discrepancy."
+TXN100560,DATE_ANOMALY_BAD,EXCEPTION,44956.69,Settlement delayed far beyond normal processing window; requires review.
+TXN100561,CLEAN,MATCH,21798.53,"Clean transaction, no discrepancy."
+TXN100562,CLEAN,MATCH,29742.12,"Clean transaction, no discrepancy."
+TXN100563,CLEAN,MATCH,49920.74,"Clean transaction, no discrepancy."
+TXN100564,CLEAN,MATCH,9780.71,"Clean transaction, no discrepancy."
+TXN100565,CLEAN,MATCH,55317.21,"Clean transaction, no discrepancy."
+TXN100566,CLEAN,MATCH,15936.24,"Clean transaction, no discrepancy."
+TXN100567,CLEAN,MATCH,22984.67,"Clean transaction, no discrepancy."
+TXN100568,IDENTITY_NOISE,MATCH,41607.32,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100569,CLEAN,MATCH,38276.8,"Clean transaction, no discrepancy."
+TXN100570,CLEAN,MATCH,22286.49,"Clean transaction, no discrepancy."
+TXN100571,DUPLICATE,EXCEPTION,28710.22,Duplicate payment record for same transaction.
+TXN100572,TAX_MISMATCH,EXCEPTION,10153.4,Applied GST 0 does not match expected GST (30.53).
+TXN100573,DATE_ANOMALY_BAD,EXCEPTION,9655.6,Settlement delayed far beyond normal processing window; requires review.
+TXN100574,CLEAN,MATCH,47383.6,"Clean transaction, no discrepancy."
+TXN100575,CLEAN,MATCH,12786.39,"Clean transaction, no discrepancy."
+TXN100576,CLEAN,MATCH,3004.85,"Clean transaction, no discrepancy."
+TXN100577,TAX_MISMATCH,EXCEPTION,52149.06,Applied GST 174.81 does not match expected GST (206.45).
+TXN100578,CLEAN,MATCH,51436.33,"Clean transaction, no discrepancy."
+TXN100579,BANK_AMOUNT_MISMATCH,EXCEPTION,51121.01,Bank credited 50780.38 instead of the settled net 51121.01.
+TXN100580,CLEAN,MATCH,10202.45,"Clean transaction, no discrepancy."
+TXN100581,AMOUNT_MISMATCH,EXCEPTION,22536.7,Unexplained settlement drift of 57.45 not attributable to fee/tax.
+TXN100582,AMOUNT_MISMATCH,EXCEPTION,28209.01,Unexplained settlement drift of -67.57 not attributable to fee/tax.
+TXN100583,CLEAN,MATCH,53030.35,"Clean transaction, no discrepancy."
+TXN100584,CLEAN,MATCH,21895.95,"Clean transaction, no discrepancy."
+TXN100585,AMOUNT_MISMATCH,EXCEPTION,55192.69,Unexplained settlement drift of -207.73 not attributable to fee/tax.
+TXN100586,PARTIAL_SETTLEMENT,EXCEPTION,28126.29,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100587,CLEAN,MATCH,11436.26,"Clean transaction, no discrepancy."
+TXN100588,CLEAN,MATCH,22235.81,"Clean transaction, no discrepancy."
+TXN100589,IDENTITY_NOISE,MATCH,6665.7,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100590,CLEAN,MATCH,35957.51,"Clean transaction, no discrepancy."
+TXN100591,CLEAN,MATCH,22054.5,"Clean transaction, no discrepancy."
+TXN100592,CLEAN,MATCH,45366.74,"Clean transaction, no discrepancy."
+TXN100593,CLEAN,MATCH,26522.93,"Clean transaction, no discrepancy."
+TXN100594,CLEAN,MATCH,46912.17,"Clean transaction, no discrepancy."
+TXN100595,CLEAN,MATCH,23154.89,"Clean transaction, no discrepancy."
+TXN100596,TAX_MISMATCH,EXCEPTION,54539.93,Applied GST 135.5 does not match expected GST (159.99).
+TXN100597,CLEAN,MATCH,36073.97,"Clean transaction, no discrepancy."
+TXN100598,CLEAN,MATCH,55334.17,"Clean transaction, no discrepancy."
+TXN100599,IDENTITY_NOISE,MATCH,12183.53,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100600,AMOUNT_MISMATCH,EXCEPTION,39751.59,Unexplained settlement drift of -344.76 not attributable to fee/tax.
+TXN100601,CLEAN,MATCH,20898.54,"Clean transaction, no discrepancy."
+TXN100602,CLEAN,MATCH,43224.85,"Clean transaction, no discrepancy."
+TXN100603,CLEAN,MATCH,20630.07,"Clean transaction, no discrepancy."
+TXN100604,AMOUNT_MISMATCH,EXCEPTION,54764.81,Unexplained settlement drift of 167.5 not attributable to fee/tax.
+TXN100605,MISSING_SETTLEMENT,EXCEPTION,29889.03,Settlement record missing entirely.
+TXN100606,CLEAN,MATCH,40699.44,"Clean transaction, no discrepancy."
+TXN100607,CLEAN,MATCH,56209.59,"Clean transaction, no discrepancy."
+TXN100608,CLEAN,MATCH,7272.88,"Clean transaction, no discrepancy."
+TXN100609,CLEAN,MATCH,47133.16,"Clean transaction, no discrepancy."
+TXN100610,CLEAN,MATCH,14867.68,"Clean transaction, no discrepancy."
+TXN100611,MISSING_SETTLEMENT,EXCEPTION,32891.07,Settlement record missing entirely.
+TXN100612,CLEAN,MATCH,52621.69,"Clean transaction, no discrepancy."
+TXN100613,CLEAN,MATCH,43520.03,"Clean transaction, no discrepancy."
+TXN100614,BANK_AMOUNT_MISMATCH,EXCEPTION,13850.91,Bank credited 13676.3 instead of the settled net 13850.91.
+TXN100615,CLEAN,MATCH,36322.19,"Clean transaction, no discrepancy."
+TXN100616,LEDGER_MISMATCH,EXCEPTION,29027.83,Merchant ledger booked 29249.61 instead of the settled net 29027.83.
+TXN100617,IDENTITY_NOISE,MATCH,3643.64,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100618,CLEAN,MATCH,50230.04,"Clean transaction, no discrepancy."
+TXN100619,MISSING_SETTLEMENT,EXCEPTION,40440.27,Settlement record missing entirely.
+TXN100620,CLEAN,MATCH,19504.84,"Clean transaction, no discrepancy."
+TXN100621,CLEAN,MATCH,16194.3,"Clean transaction, no discrepancy."
+TXN100622,AMOUNT_MISMATCH,EXCEPTION,25236.06,Unexplained settlement drift of 388.49 not attributable to fee/tax.
+TXN100623,CLEAN,MATCH,10987.32,"Clean transaction, no discrepancy."
+TXN100624,IDENTITY_NOISE,MATCH,42605.19,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100625,AMOUNT_MISMATCH,EXCEPTION,47091.89,Unexplained settlement drift of -412.55 not attributable to fee/tax.
+TXN100626,BANK_AMOUNT_MISMATCH,EXCEPTION,58481.24,Bank credited 58718.13 instead of the settled net 58481.24.
+TXN100627,CLEAN,MATCH,33049.94,"Clean transaction, no discrepancy."
+TXN100628,PARTIAL_SETTLEMENT,EXCEPTION,3986.63,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100629,IDENTITY_NOISE,MATCH,15545.8,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100630,CLEAN,MATCH,7490.19,"Clean transaction, no discrepancy."
+TXN100631,CLEAN,MATCH,21057.29,"Clean transaction, no discrepancy."
+TXN100632,CLEAN,MATCH,35963.25,"Clean transaction, no discrepancy."
+TXN100633,CLEAN,MATCH,24939.59,"Clean transaction, no discrepancy."
+TXN100634,CLEAN,MATCH,9955.92,"Clean transaction, no discrepancy."
+TXN100635,AMOUNT_MISMATCH,EXCEPTION,35555.1,Unexplained settlement drift of 449.46 not attributable to fee/tax.
+TXN100636,BANK_AMOUNT_MISMATCH,EXCEPTION,10154.67,Bank credited 10459.39 instead of the settled net 10154.67.
+TXN100637,FEE_MISMATCH,EXCEPTION,23617.51,Applied fee 715.5 does not match configured fee schedule (429.41).
+TXN100638,CLEAN,MATCH,45197.25,"Clean transaction, no discrepancy."
+TXN100639,CLEAN,MATCH,5400.66,"Clean transaction, no discrepancy."
+TXN100640,CLEAN,MATCH,26157.88,"Clean transaction, no discrepancy."
+TXN100641,MISSING_BANK_CREDIT,EXCEPTION,2523.92,Settlement was booked but no corresponding bank credit was ever received.
+TXN100642,CLEAN,MATCH,32262.53,"Clean transaction, no discrepancy."
+TXN100643,CLEAN,MATCH,37327.59,"Clean transaction, no discrepancy."
+TXN100644,MISSING_BANK_CREDIT,EXCEPTION,28408.21,Settlement was booked but no corresponding bank credit was ever received.
+TXN100645,MISSING_BANK_CREDIT,EXCEPTION,24382.36,Settlement was booked but no corresponding bank credit was ever received.
+TXN100646,CLEAN,MATCH,20520.88,"Clean transaction, no discrepancy."
+TXN100647,IDENTITY_NOISE,MATCH,17977.08,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100648,MISSING_BANK_CREDIT,EXCEPTION,24490.92,Settlement was booked but no corresponding bank credit was ever received.
+TXN100649,CLEAN,MATCH,42134.82,"Clean transaction, no discrepancy."
+TXN100650,CLEAN,MATCH,5075.19,"Clean transaction, no discrepancy."
+TXN100651,FEE_MISMATCH,EXCEPTION,38050.15,Applied fee 1046.3 does not match configured fee schedule (875.46).
+TXN100652,FEE_MISMATCH,EXCEPTION,17358.5,Applied fee 531.51 does not match configured fee schedule (315.61).
+TXN100653,DATE_ANOMALY_BAD,EXCEPTION,19180.93,Settlement delayed far beyond normal processing window; requires review.
+TXN100654,CLEAN,MATCH,16973.74,"Clean transaction, no discrepancy."
+TXN100655,CLEAN,MATCH,5747.65,"Clean transaction, no discrepancy."
+TXN100656,CLEAN,MATCH,18495.97,"Clean transaction, no discrepancy."
+TXN100657,PARTIAL_SETTLEMENT,EXCEPTION,5137.62,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100658,CLEAN,MATCH,11087.4,"Clean transaction, no discrepancy."
+TXN100659,AMOUNT_MISMATCH,EXCEPTION,22920.65,Unexplained settlement drift of -381.93 not attributable to fee/tax.
+TXN100660,CLEAN,MATCH,30938.94,"Clean transaction, no discrepancy."
+TXN100661,CLEAN,MATCH,9681.76,"Clean transaction, no discrepancy."
+TXN100662,BANK_AMOUNT_MISMATCH,EXCEPTION,28363.12,Bank credited 28186.97 instead of the settled net 28363.12.
+TXN100663,CLEAN,MATCH,14277.47,"Clean transaction, no discrepancy."
+TXN100664,TAX_RECORD_MISSING,EXCEPTION,34356.69,No separate tax record was filed for this transaction (compliance gap).
+TXN100665,CLEAN,MATCH,40676.41,"Clean transaction, no discrepancy."
+TXN100666,CLEAN,MATCH,29609.93,"Clean transaction, no discrepancy."
+TXN100667,CLEAN,MATCH,21104.15,"Clean transaction, no discrepancy."
+TXN100668,CLEAN,MATCH,28906.48,"Clean transaction, no discrepancy."
+TXN100669,CLEAN,MATCH,43290.98,"Clean transaction, no discrepancy."
+TXN100670,DATE_ANOMALY_NORMAL,MATCH,15092.63,Settlement delayed by a few days; within normal processing window.
+TXN100671,CLEAN,MATCH,11564.52,"Clean transaction, no discrepancy."
+TXN100672,CLEAN,MATCH,16559.17,"Clean transaction, no discrepancy."
+TXN100673,AMOUNT_MISMATCH,EXCEPTION,26666.25,Unexplained settlement drift of -215.2 not attributable to fee/tax.
+TXN100674,CLEAN,MATCH,51920.55,"Clean transaction, no discrepancy."
+TXN100675,CLEAN,MATCH,42283.3,"Clean transaction, no discrepancy."
+TXN100676,MISSING_SETTLEMENT,EXCEPTION,36199.19,Settlement record missing entirely.
+TXN100677,CLEAN,MATCH,6114.82,"Clean transaction, no discrepancy."
+TXN100678,DUPLICATE,EXCEPTION,12205.09,Duplicate payment record for same transaction.
+TXN100679,AMOUNT_MISMATCH,EXCEPTION,38522.3,Unexplained settlement drift of 365.59 not attributable to fee/tax.
+TXN100680,MISSING_SETTLEMENT,EXCEPTION,35812.34,Settlement record missing entirely.
+TXN100681,MISSING_BANK_CREDIT,EXCEPTION,27837.69,Settlement was booked but no corresponding bank credit was ever received.
+TXN100682,CLEAN,MATCH,46529.33,"Clean transaction, no discrepancy."
+TXN100683,AMOUNT_MISMATCH,EXCEPTION,49244.75,Unexplained settlement drift of -482.26 not attributable to fee/tax.
+TXN100684,CLEAN,MATCH,11434.97,"Clean transaction, no discrepancy."
+TXN100685,CLEAN,MATCH,43621.47,"Clean transaction, no discrepancy."
+TXN100686,CLEAN,MATCH,51526.63,"Clean transaction, no discrepancy."
+TXN100687,CLEAN,MATCH,38603.89,"Clean transaction, no discrepancy."
+TXN100688,DUPLICATE,EXCEPTION,32375.04,Duplicate payment record for same transaction.
+TXN100689,CLEAN,MATCH,35756.52,"Clean transaction, no discrepancy."
+TXN100690,CLEAN,MATCH,21341.11,"Clean transaction, no discrepancy."
+TXN100691,AMOUNT_MISMATCH,EXCEPTION,57494.04,Unexplained settlement drift of 282.92 not attributable to fee/tax.
+TXN100692,CLEAN,MATCH,13012.39,"Clean transaction, no discrepancy."
+TXN100693,CLEAN,MATCH,2695.75,"Clean transaction, no discrepancy."
+TXN100694,MISSING_SETTLEMENT,EXCEPTION,52058.21,Settlement record missing entirely.
+TXN100695,PARTIAL_SETTLEMENT,EXCEPTION,33822.14,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100696,CLEAN,MATCH,28931.73,"Clean transaction, no discrepancy."
+TXN100697,CLEAN,MATCH,42868.98,"Clean transaction, no discrepancy."
+TXN100698,CLEAN,MATCH,20656.45,"Clean transaction, no discrepancy."
+TXN100699,CLEAN,MATCH,37248.88,"Clean transaction, no discrepancy."
+TXN100700,TAX_MISMATCH,EXCEPTION,19004.57,Applied GST 32.59 does not match expected GST (75.47).
+TXN100701,CLEAN,MATCH,39554.18,"Clean transaction, no discrepancy."
+TXN100702,DUPLICATE,EXCEPTION,25668.41,Duplicate payment record for same transaction.
+TXN100703,DATE_ANOMALY_NORMAL,MATCH,28293.16,Settlement delayed by a few days; within normal processing window.
+TXN100704,CLEAN,MATCH,29496.41,"Clean transaction, no discrepancy."
+TXN100705,CLEAN,MATCH,23564.88,"Clean transaction, no discrepancy."
+TXN100706,CLEAN,MATCH,4666.15,"Clean transaction, no discrepancy."
+TXN100707,CLEAN,MATCH,39738.35,"Clean transaction, no discrepancy."
+TXN100708,DATE_ANOMALY_BAD,EXCEPTION,20459.05,Settlement delayed far beyond normal processing window; requires review.
+TXN100709,DATE_ANOMALY_BAD,EXCEPTION,36868.38,Settlement delayed far beyond normal processing window; requires review.
+TXN100710,CLEAN,MATCH,44627.68,"Clean transaction, no discrepancy."
+TXN100711,CLEAN,MATCH,51094.54,"Clean transaction, no discrepancy."
+TXN100712,CLEAN,MATCH,26557.63,"Clean transaction, no discrepancy."
+TXN100713,CLEAN,MATCH,32342.22,"Clean transaction, no discrepancy."
+TXN100714,CLEAN,MATCH,22327.27,"Clean transaction, no discrepancy."
+TXN100715,IDENTITY_NOISE,MATCH,16957.1,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100716,CLEAN,MATCH,23197.88,"Clean transaction, no discrepancy."
+TXN100717,DUPLICATE,EXCEPTION,1605.64,Duplicate payment record for same transaction.
+TXN100718,CLEAN,MATCH,53300.41,"Clean transaction, no discrepancy."
+TXN100719,CLEAN,MATCH,12074.02,"Clean transaction, no discrepancy."
+TXN100720,CLEAN,MATCH,54251.18,"Clean transaction, no discrepancy."
+TXN100721,CLEAN,MATCH,1559.69,"Clean transaction, no discrepancy."
+TXN100722,DATE_ANOMALY_NORMAL,MATCH,58548.75,Settlement delayed by a few days; within normal processing window.
+TXN100723,LEDGER_MISMATCH,EXCEPTION,51964.8,Merchant ledger booked 51582.61 instead of the settled net 51964.8.
+TXN100724,CLEAN,MATCH,38465.09,"Clean transaction, no discrepancy."
+TXN100725,CLEAN,MATCH,14378.13,"Clean transaction, no discrepancy."
+TXN100726,CLEAN,MATCH,32142.31,"Clean transaction, no discrepancy."
+TXN100727,CLEAN,MATCH,18488.73,"Clean transaction, no discrepancy."
+TXN100728,MISSING_BANK_CREDIT,EXCEPTION,18983.73,Settlement was booked but no corresponding bank credit was ever received.
+TXN100729,CLEAN,MATCH,49153.78,"Clean transaction, no discrepancy."
+TXN100730,CLEAN,MATCH,56058.26,"Clean transaction, no discrepancy."
+TXN100731,TAX_MISMATCH,EXCEPTION,45872.74,Applied GST 117.2 does not match expected GST (150.13).
+TXN100732,CLEAN,MATCH,35253.13,"Clean transaction, no discrepancy."
+TXN100733,CLEAN,MATCH,40696.17,"Clean transaction, no discrepancy."
+TXN100734,IDENTITY_NOISE,MATCH,11152.14,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100735,CLEAN,MATCH,13679.85,"Clean transaction, no discrepancy."
+TXN100736,CLEAN,MATCH,43764.18,"Clean transaction, no discrepancy."
+TXN100737,CLEAN,MATCH,51110.89,"Clean transaction, no discrepancy."
+TXN100738,CLEAN,MATCH,25413.09,"Clean transaction, no discrepancy."
+TXN100739,CLEAN,MATCH,35838.42,"Clean transaction, no discrepancy."
+TXN100740,AMOUNT_MISMATCH,EXCEPTION,26876.62,Unexplained settlement drift of 283.42 not attributable to fee/tax.
+TXN100741,DUPLICATE,EXCEPTION,11495.86,Duplicate payment record for same transaction.
+TXN100742,MISSING_BANK_CREDIT,EXCEPTION,10204.82,Settlement was booked but no corresponding bank credit was ever received.
+TXN100743,CLEAN,MATCH,48936.94,"Clean transaction, no discrepancy."
+TXN100744,AMOUNT_MISMATCH,EXCEPTION,45850.79,Unexplained settlement drift of 226.88 not attributable to fee/tax.
+TXN100745,CLEAN,MATCH,26916.52,"Clean transaction, no discrepancy."
+TXN100746,CLEAN,MATCH,40585.6,"Clean transaction, no discrepancy."
+TXN100747,CLEAN,MATCH,41752.83,"Clean transaction, no discrepancy."
+TXN100748,CLEAN,MATCH,22547.63,"Clean transaction, no discrepancy."
+TXN100749,CLEAN,MATCH,9933.26,"Clean transaction, no discrepancy."
+TXN100750,MISSING_BANK_CREDIT,EXCEPTION,18416.34,Settlement was booked but no corresponding bank credit was ever received.
+TXN100751,FEE_MISMATCH,EXCEPTION,52988.98,Applied fee 1042.6 does not match configured fee schedule (825.64).
+TXN100752,AMOUNT_MISMATCH,EXCEPTION,29538.04,Unexplained settlement drift of 413.35 not attributable to fee/tax.
+TXN100753,CLEAN,MATCH,26975.63,"Clean transaction, no discrepancy."
+TXN100754,CLEAN,MATCH,51913.53,"Clean transaction, no discrepancy."
+TXN100755,FEE_MISMATCH,EXCEPTION,11205.27,Applied fee 404.84 does not match configured fee schedule (248.06).
+TXN100756,CLEAN,MATCH,19667.16,"Clean transaction, no discrepancy."
+TXN100757,CLEAN,MATCH,9887.32,"Clean transaction, no discrepancy."
+TXN100758,MISSING_BANK_CREDIT,EXCEPTION,44233.63,Settlement was booked but no corresponding bank credit was ever received.
+TXN100759,BANK_AMOUNT_MISMATCH,EXCEPTION,21852.9,Bank credited 21537.45 instead of the settled net 21852.9.
+TXN100760,TAX_MISMATCH,EXCEPTION,7597.39,Applied GST 0 does not match expected GST (24.86).
+TXN100761,BANK_AMOUNT_MISMATCH,EXCEPTION,36167.92,Bank credited 35862.52 instead of the settled net 36167.92.
+TXN100762,CLEAN,MATCH,35684.59,"Clean transaction, no discrepancy."
+TXN100763,CLEAN,MATCH,36272.05,"Clean transaction, no discrepancy."
+TXN100764,CLEAN,MATCH,47657.57,"Clean transaction, no discrepancy."
+TXN100765,CLEAN,MATCH,7340.73,"Clean transaction, no discrepancy."
+TXN100766,CLEAN,MATCH,24420.68,"Clean transaction, no discrepancy."
+TXN100767,CLEAN,MATCH,37639.28,"Clean transaction, no discrepancy."
+TXN100768,CLEAN,MATCH,29837.94,"Clean transaction, no discrepancy."
+TXN100769,DUPLICATE,EXCEPTION,23445.88,Duplicate payment record for same transaction.
+TXN100770,AMOUNT_MISMATCH,EXCEPTION,19756.35,Unexplained settlement drift of 265.6 not attributable to fee/tax.
+TXN100771,LEDGER_MISMATCH,EXCEPTION,9556.74,Merchant ledger booked 9920.32 instead of the settled net 9556.74.
+TXN100772,DATE_ANOMALY_NORMAL,MATCH,33212.38,Settlement delayed by a few days; within normal processing window.
+TXN100773,CLEAN,MATCH,4325.47,"Clean transaction, no discrepancy."
+TXN100774,FEE_MISMATCH,EXCEPTION,36706.1,Applied fee 1121.13 does not match configured fee schedule (907.88).
+TXN100775,CLEAN,MATCH,41340.95,"Clean transaction, no discrepancy."
+TXN100776,AMOUNT_MISMATCH,EXCEPTION,5498.82,Unexplained settlement drift of 253.36 not attributable to fee/tax.
+TXN100777,CLEAN,MATCH,7027.0,"Clean transaction, no discrepancy."
+TXN100778,CLEAN,MATCH,46826.48,"Clean transaction, no discrepancy."
+TXN100779,CLEAN,MATCH,43247.3,"Clean transaction, no discrepancy."
+TXN100780,CLEAN,MATCH,48525.07,"Clean transaction, no discrepancy."
+TXN100781,CLEAN,MATCH,27127.24,"Clean transaction, no discrepancy."
+TXN100782,CLEAN,MATCH,40332.34,"Clean transaction, no discrepancy."
+TXN100783,DUPLICATE,EXCEPTION,6464.72,Duplicate payment record for same transaction.
+TXN100784,CLEAN,MATCH,19194.73,"Clean transaction, no discrepancy."
+TXN100785,MISSING_SETTLEMENT,EXCEPTION,39667.39,Settlement record missing entirely.
+TXN100786,CLEAN,MATCH,1382.35,"Clean transaction, no discrepancy."
+TXN100787,CLEAN,MATCH,32115.15,"Clean transaction, no discrepancy."
+TXN100788,CLEAN,MATCH,33741.86,"Clean transaction, no discrepancy."
+TXN100789,CLEAN,MATCH,3446.3,"Clean transaction, no discrepancy."
+TXN100790,FEE_MISMATCH,EXCEPTION,22903.09,Applied fee 523.08 does not match configured fee schedule (356.86).
+TXN100791,CLEAN,MATCH,18599.14,"Clean transaction, no discrepancy."
+TXN100792,AMOUNT_MISMATCH,EXCEPTION,33634.33,Unexplained settlement drift of 260.72 not attributable to fee/tax.
+TXN100793,DATE_ANOMALY_BAD,EXCEPTION,14011.88,Settlement delayed far beyond normal processing window; requires review.
+TXN100794,CLEAN,MATCH,11081.84,"Clean transaction, no discrepancy."
+TXN100795,CLEAN,MATCH,4276.03,"Clean transaction, no discrepancy."
+TXN100796,MISSING_SETTLEMENT,EXCEPTION,16931.06,Settlement record missing entirely.
+TXN100797,CLEAN,MATCH,24193.5,"Clean transaction, no discrepancy."
+TXN100798,FEE_MISMATCH,EXCEPTION,31347.3,Applied fee 892.2 does not match configured fee schedule (721.24).
+TXN100799,CLEAN,MATCH,57218.95,"Clean transaction, no discrepancy."
+TXN100800,CLEAN,MATCH,45830.59,"Clean transaction, no discrepancy."
+TXN100801,CLEAN,MATCH,39086.84,"Clean transaction, no discrepancy."
+TXN100802,TAX_MISMATCH,EXCEPTION,35088.57,Applied GST 39.55 does not match expected GST (98.41).
+TXN100803,DUPLICATE,EXCEPTION,55858.53,Duplicate payment record for same transaction.
+TXN100804,CLEAN,MATCH,29141.14,"Clean transaction, no discrepancy."
+TXN100805,CLEAN,MATCH,44393.63,"Clean transaction, no discrepancy."
+TXN100806,TAX_MISMATCH,EXCEPTION,36073.6,Applied GST 126.22 does not match expected GST (160.62).
+TXN100807,CLEAN,MATCH,53693.1,"Clean transaction, no discrepancy."
+TXN100808,CLEAN,MATCH,35949.95,"Clean transaction, no discrepancy."
+TXN100809,DUPLICATE,EXCEPTION,21899.02,Duplicate payment record for same transaction.
+TXN100810,CLEAN,MATCH,50810.06,"Clean transaction, no discrepancy."
+TXN100811,CLEAN,MATCH,41748.24,"Clean transaction, no discrepancy."
+TXN100812,DATE_ANOMALY_NORMAL,MATCH,28150.88,Settlement delayed by a few days; within normal processing window.
+TXN100813,AMOUNT_MISMATCH,EXCEPTION,17293.0,Unexplained settlement drift of -55.22 not attributable to fee/tax.
+TXN100814,BANK_AMOUNT_MISMATCH,EXCEPTION,56854.99,Bank credited 56953.02 instead of the settled net 56854.99.
+TXN100815,CLEAN,MATCH,26958.08,"Clean transaction, no discrepancy."
+TXN100816,CLEAN,MATCH,13573.2,"Clean transaction, no discrepancy."
+TXN100817,TAX_MISMATCH,EXCEPTION,42001.61,Applied GST 47.87 does not match expected GST (132.73).
+TXN100818,IDENTITY_NOISE,MATCH,57220.12,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100819,CLEAN,MATCH,56634.5,"Clean transaction, no discrepancy."
+TXN100820,CLEAN,MATCH,30666.13,"Clean transaction, no discrepancy."
+TXN100821,CLEAN,MATCH,37305.12,"Clean transaction, no discrepancy."
+TXN100822,MISSING_SETTLEMENT,EXCEPTION,52890.7,Settlement record missing entirely.
+TXN100823,DATE_ANOMALY_NORMAL,MATCH,33994.92,Settlement delayed by a few days; within normal processing window.
+TXN100824,CLEAN,MATCH,2547.26,"Clean transaction, no discrepancy."
+TXN100825,CLEAN,MATCH,36982.84,"Clean transaction, no discrepancy."
+TXN100826,CLEAN,MATCH,47343.93,"Clean transaction, no discrepancy."
+TXN100827,DUPLICATE,EXCEPTION,7900.61,Duplicate payment record for same transaction.
+TXN100828,CLEAN,MATCH,16429.37,"Clean transaction, no discrepancy."
+TXN100829,MISSING_SETTLEMENT,EXCEPTION,38885.49,Settlement record missing entirely.
+TXN100830,DATE_ANOMALY_BAD,EXCEPTION,11041.03,Settlement delayed far beyond normal processing window; requires review.
+TXN100831,CLEAN,MATCH,49280.75,"Clean transaction, no discrepancy."
+TXN100832,PARTIAL_SETTLEMENT,EXCEPTION,12771.96,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100833,MISSING_BANK_CREDIT,EXCEPTION,27518.49,Settlement was booked but no corresponding bank credit was ever received.
+TXN100834,CLEAN,MATCH,40001.89,"Clean transaction, no discrepancy."
+TXN100835,CLEAN,MATCH,1165.94,"Clean transaction, no discrepancy."
+TXN100836,CLEAN,MATCH,6131.91,"Clean transaction, no discrepancy."
+TXN100837,CLEAN,MATCH,19890.54,"Clean transaction, no discrepancy."
+TXN100838,CLEAN,MATCH,45624.11,"Clean transaction, no discrepancy."
+TXN100839,TAX_MISMATCH,EXCEPTION,39774.07,Applied GST 101.86 does not match expected GST (160.19).
+TXN100840,LEDGER_MISMATCH,EXCEPTION,1189.82,Merchant ledger booked 1276.19 instead of the settled net 1189.82.
+TXN100841,CLEAN,MATCH,15078.44,"Clean transaction, no discrepancy."
+TXN100842,AMOUNT_MISMATCH,EXCEPTION,54915.99,Unexplained settlement drift of -337.14 not attributable to fee/tax.
+TXN100843,CLEAN,MATCH,38434.03,"Clean transaction, no discrepancy."
+TXN100844,CLEAN,MATCH,15246.37,"Clean transaction, no discrepancy."
+TXN100845,CLEAN,MATCH,45053.68,"Clean transaction, no discrepancy."
+TXN100846,AMOUNT_MISMATCH,EXCEPTION,45502.42,Unexplained settlement drift of -199.69 not attributable to fee/tax.
+TXN100847,MISSING_SETTLEMENT,EXCEPTION,26153.1,Settlement record missing entirely.
+TXN100848,MISSING_BANK_CREDIT,EXCEPTION,38089.06,Settlement was booked but no corresponding bank credit was ever received.
+TXN100849,CLEAN,MATCH,36279.41,"Clean transaction, no discrepancy."
+TXN100850,CLEAN,MATCH,4714.16,"Clean transaction, no discrepancy."
+TXN100851,CLEAN,MATCH,52480.5,"Clean transaction, no discrepancy."
+TXN100852,CLEAN,MATCH,39030.5,"Clean transaction, no discrepancy."
+TXN100853,CLEAN,MATCH,30375.94,"Clean transaction, no discrepancy."
+TXN100854,CLEAN,MATCH,32048.42,"Clean transaction, no discrepancy."
+TXN100855,CLEAN,MATCH,19816.45,"Clean transaction, no discrepancy."
+TXN100856,AMOUNT_MISMATCH,EXCEPTION,31479.12,Unexplained settlement drift of 428.53 not attributable to fee/tax.
+TXN100857,CLEAN,MATCH,32787.84,"Clean transaction, no discrepancy."
+TXN100858,BANK_AMOUNT_MISMATCH,EXCEPTION,52315.13,Bank credited 52139.39 instead of the settled net 52315.13.
+TXN100859,FEE_MISMATCH,EXCEPTION,8647.46,Applied fee 390.16 does not match configured fee schedule (151.82).
+TXN100860,CLEAN,MATCH,23182.4,"Clean transaction, no discrepancy."
+TXN100861,IDENTITY_NOISE,MATCH,56916.85,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100862,MISSING_SETTLEMENT,EXCEPTION,24003.46,Settlement record missing entirely.
+TXN100863,CLEAN,MATCH,43655.93,"Clean transaction, no discrepancy."
+TXN100864,MISSING_BANK_CREDIT,EXCEPTION,38657.8,Settlement was booked but no corresponding bank credit was ever received.
+TXN100865,AMOUNT_MISMATCH,EXCEPTION,1326.28,Unexplained settlement drift of -457.1 not attributable to fee/tax.
+TXN100866,FEE_MISMATCH,EXCEPTION,48271.6,Applied fee 941.5 does not match configured fee schedule (752.13).
+TXN100867,CLEAN,MATCH,47491.81,"Clean transaction, no discrepancy."
+TXN100868,CLEAN,MATCH,7489.99,"Clean transaction, no discrepancy."
+TXN100869,TAX_MISMATCH,EXCEPTION,45038.52,Applied GST 98.84 does not match expected GST (142.33).
+TXN100870,CLEAN,MATCH,44616.99,"Clean transaction, no discrepancy."
+TXN100871,FEE_MISMATCH,EXCEPTION,14709.58,Applied fee 352.79 does not match configured fee schedule (243.45).
+TXN100872,CLEAN,MATCH,1399.97,"Clean transaction, no discrepancy."
+TXN100873,PARTIAL_SETTLEMENT,EXCEPTION,54437.22,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100874,IDENTITY_NOISE,MATCH,12498.39,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100875,CLEAN,MATCH,55173.33,"Clean transaction, no discrepancy."
+TXN100876,CLEAN,MATCH,36218.42,"Clean transaction, no discrepancy."
+TXN100877,IDENTITY_NOISE,MATCH,744.25,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100878,CLEAN,MATCH,50499.16,"Clean transaction, no discrepancy."
+TXN100879,TAX_RECORD_MISSING,EXCEPTION,16603.42,No separate tax record was filed for this transaction (compliance gap).
+TXN100880,CLEAN,MATCH,10779.15,"Clean transaction, no discrepancy."
+TXN100881,AMOUNT_MISMATCH,EXCEPTION,12627.75,Unexplained settlement drift of 327.57 not attributable to fee/tax.
+TXN100882,CLEAN,MATCH,54124.66,"Clean transaction, no discrepancy."
+TXN100883,BANK_AMOUNT_MISMATCH,EXCEPTION,4630.99,Bank credited 4836.68 instead of the settled net 4630.99.
+TXN100884,MISSING_SETTLEMENT,EXCEPTION,13823.77,Settlement record missing entirely.
+TXN100885,BANK_AMOUNT_MISMATCH,EXCEPTION,43494.94,Bank credited 43132.96 instead of the settled net 43494.94.
+TXN100886,LEDGER_MISMATCH,EXCEPTION,52131.15,Merchant ledger booked 52505.91 instead of the settled net 52131.15.
+TXN100887,CLEAN,MATCH,8394.43,"Clean transaction, no discrepancy."
+TXN100888,CLEAN,MATCH,20069.76,"Clean transaction, no discrepancy."
+TXN100889,CLEAN,MATCH,8393.95,"Clean transaction, no discrepancy."
+TXN100890,CLEAN,MATCH,13231.93,"Clean transaction, no discrepancy."
+TXN100891,FEE_MISMATCH,EXCEPTION,5530.64,Applied fee 366.78 does not match configured fee schedule (97.1).
+TXN100892,CLEAN,MATCH,16783.74,"Clean transaction, no discrepancy."
+TXN100893,CLEAN,MATCH,25660.29,"Clean transaction, no discrepancy."
+TXN100894,CLEAN,MATCH,57156.18,"Clean transaction, no discrepancy."
+TXN100895,CLEAN,MATCH,31190.51,"Clean transaction, no discrepancy."
+TXN100896,CLEAN,MATCH,14526.65,"Clean transaction, no discrepancy."
+TXN100897,CLEAN,MATCH,21366.72,"Clean transaction, no discrepancy."
+TXN100898,AMOUNT_MISMATCH,EXCEPTION,39545.47,Unexplained settlement drift of -256.68 not attributable to fee/tax.
+TXN100899,DATE_ANOMALY_BAD,EXCEPTION,51411.82,Settlement delayed far beyond normal processing window; requires review.
+TXN100900,TAX_MISMATCH,EXCEPTION,50385.06,Applied GST 116.94 does not match expected GST (199.48).
+TXN100901,CLEAN,MATCH,25158.15,"Clean transaction, no discrepancy."
+TXN100902,IDENTITY_NOISE,MATCH,36741.56,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100903,AMOUNT_MISMATCH,EXCEPTION,6920.8,Unexplained settlement drift of 328.61 not attributable to fee/tax.
+TXN100904,CLEAN,MATCH,33253.7,"Clean transaction, no discrepancy."
+TXN100905,IDENTITY_NOISE,MATCH,38411.55,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100906,CLEAN,MATCH,52539.8,"Clean transaction, no discrepancy."
+TXN100907,BANK_AMOUNT_MISMATCH,EXCEPTION,4160.27,Bank credited 3940.09 instead of the settled net 4160.27.
+TXN100908,MISSING_BANK_CREDIT,EXCEPTION,36738.13,Settlement was booked but no corresponding bank credit was ever received.
+TXN100909,CLEAN,MATCH,23316.9,"Clean transaction, no discrepancy."
+TXN100910,CLEAN,MATCH,16563.23,"Clean transaction, no discrepancy."
+TXN100911,CLEAN,MATCH,17488.11,"Clean transaction, no discrepancy."
+TXN100912,CLEAN,MATCH,26144.86,"Clean transaction, no discrepancy."
+TXN100913,IDENTITY_NOISE,MATCH,1778.48,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100914,TAX_MISMATCH,EXCEPTION,38501.19,Applied GST 93.53 does not match expected GST (155.07).
+TXN100915,DATE_ANOMALY_NORMAL,MATCH,18238.16,Settlement delayed by a few days; within normal processing window.
+TXN100916,DUPLICATE,EXCEPTION,22197.74,Duplicate payment record for same transaction.
+TXN100917,CLEAN,MATCH,26897.38,"Clean transaction, no discrepancy."
+TXN100918,MISSING_SETTLEMENT,EXCEPTION,57179.01,Settlement record missing entirely.
+TXN100919,DUPLICATE,EXCEPTION,58121.38,Duplicate payment record for same transaction.
+TXN100920,CLEAN,MATCH,11182.3,"Clean transaction, no discrepancy."
+TXN100921,IDENTITY_NOISE,MATCH,9063.38,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100922,CLEAN,MATCH,54268.05,"Clean transaction, no discrepancy."
+TXN100923,AMOUNT_MISMATCH,EXCEPTION,9533.45,Unexplained settlement drift of 199.08 not attributable to fee/tax.
+TXN100924,PARTIAL_SETTLEMENT,EXCEPTION,47065.02,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100925,FEE_MISMATCH,EXCEPTION,39983.66,Applied fee 812.44 does not match configured fee schedule (726.98).
+TXN100926,CLEAN,MATCH,21350.67,"Clean transaction, no discrepancy."
+TXN100927,CLEAN,MATCH,46032.72,"Clean transaction, no discrepancy."
+TXN100928,CLEAN,MATCH,40014.15,"Clean transaction, no discrepancy."
+TXN100929,FEE_MISMATCH,EXCEPTION,19036.59,Applied fee 601.11 does not match configured fee schedule (313.56).
+TXN100930,CLEAN,MATCH,9034.52,"Clean transaction, no discrepancy."
+TXN100931,CLEAN,MATCH,16994.02,"Clean transaction, no discrepancy."
+TXN100932,AMOUNT_MISMATCH,EXCEPTION,42918.15,Unexplained settlement drift of 496.67 not attributable to fee/tax.
+TXN100933,AMOUNT_MISMATCH,EXCEPTION,42609.42,Unexplained settlement drift of -425.98 not attributable to fee/tax.
+TXN100934,DUPLICATE,EXCEPTION,27979.84,Duplicate payment record for same transaction.
+TXN100935,CLEAN,MATCH,877.68,"Clean transaction, no discrepancy."
+TXN100936,TAX_RECORD_MISSING,EXCEPTION,41951.54,No separate tax record was filed for this transaction (compliance gap).
+TXN100937,AMOUNT_MISMATCH,EXCEPTION,32570.8,Unexplained settlement drift of 425.56 not attributable to fee/tax.
+TXN100938,MISSING_BANK_CREDIT,EXCEPTION,2054.42,Settlement was booked but no corresponding bank credit was ever received.
+TXN100939,TAX_RECORD_MISSING,EXCEPTION,7734.62,No separate tax record was filed for this transaction (compliance gap).
+TXN100940,TAX_MISMATCH,EXCEPTION,2147.83,Applied GST 0 does not match expected GST (6.79).
+TXN100941,CLEAN,MATCH,33505.04,"Clean transaction, no discrepancy."
+TXN100942,BANK_AMOUNT_MISMATCH,EXCEPTION,22295.61,Bank credited 21949.76 instead of the settled net 22295.61.
+TXN100943,FEE_MISMATCH,EXCEPTION,19111.02,Applied fee 463.4 does not match configured fee schedule (347.47).
+TXN100944,CLEAN,MATCH,37269.06,"Clean transaction, no discrepancy."
+TXN100945,AMOUNT_MISMATCH,EXCEPTION,30514.03,Unexplained settlement drift of -394.11 not attributable to fee/tax.
+TXN100946,CLEAN,MATCH,48417.53,"Clean transaction, no discrepancy."
+TXN100947,DUPLICATE,EXCEPTION,31714.9,Duplicate payment record for same transaction.
+TXN100948,CLEAN,MATCH,22094.49,"Clean transaction, no discrepancy."
+TXN100949,CLEAN,MATCH,13220.56,"Clean transaction, no discrepancy."
+TXN100950,AMOUNT_MISMATCH,EXCEPTION,27106.53,Unexplained settlement drift of -418.48 not attributable to fee/tax.
+TXN100951,BANK_AMOUNT_MISMATCH,EXCEPTION,40517.49,Bank credited 40878.89 instead of the settled net 40517.49.
+TXN100952,TAX_RECORD_MISSING,EXCEPTION,43661.85,No separate tax record was filed for this transaction (compliance gap).
+TXN100953,PARTIAL_SETTLEMENT,EXCEPTION,18410.59,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100954,CLEAN,MATCH,1589.75,"Clean transaction, no discrepancy."
+TXN100955,PARTIAL_SETTLEMENT,EXCEPTION,2406.92,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100956,CLEAN,MATCH,4327.2,"Clean transaction, no discrepancy."
+TXN100957,FEE_MISMATCH,EXCEPTION,11261.22,Applied fee 297.68 does not match configured fee schedule (197.71).
+TXN100958,CLEAN,MATCH,9794.55,"Clean transaction, no discrepancy."
+TXN100959,BANK_AMOUNT_MISMATCH,EXCEPTION,6281.3,Bank credited 6046.21 instead of the settled net 6281.3.
+TXN100960,CLEAN,MATCH,56950.22,"Clean transaction, no discrepancy."
+TXN100961,LEDGER_MISMATCH,EXCEPTION,40957.5,Merchant ledger booked 40671.77 instead of the settled net 40957.5.
+TXN100962,CLEAN,MATCH,25001.82,"Clean transaction, no discrepancy."
+TXN100963,AMOUNT_MISMATCH,EXCEPTION,7653.06,Unexplained settlement drift of 111.16 not attributable to fee/tax.
+TXN100964,CLEAN,MATCH,19661.38,"Clean transaction, no discrepancy."
+TXN100965,CLEAN,MATCH,40285.53,"Clean transaction, no discrepancy."
+TXN100966,PARTIAL_SETTLEMENT,EXCEPTION,57542.99,Only part of the settlement amount was paid out; remainder unexplained.
+TXN100967,BANK_AMOUNT_MISMATCH,EXCEPTION,1234.28,Bank credited 1321.09 instead of the settled net 1234.28.
+TXN100968,CLEAN,MATCH,8867.34,"Clean transaction, no discrepancy."
+TXN100969,LEDGER_MISMATCH,EXCEPTION,4258.9,Merchant ledger booked 4378.99 instead of the settled net 4258.9.
+TXN100970,CLEAN,MATCH,42412.53,"Clean transaction, no discrepancy."
+TXN100971,CLEAN,MATCH,21070.25,"Clean transaction, no discrepancy."
+TXN100972,CLEAN,MATCH,45225.67,"Clean transaction, no discrepancy."
+TXN100973,FEE_MISMATCH,EXCEPTION,13960.94,Applied fee 333.23 does not match configured fee schedule (231.32).
+TXN100974,LEDGER_MISMATCH,EXCEPTION,40075.12,Merchant ledger booked 40336.72 instead of the settled net 40075.12.
+TXN100975,IDENTITY_NOISE,MATCH,44904.59,Merchant name differs only by formatting/legal-suffix noise; same entity.
+TXN100976,CLEAN,MATCH,29107.34,"Clean transaction, no discrepancy."
+TXN100977,CLEAN,MATCH,57943.82,"Clean transaction, no discrepancy."
+TXN100978,CLEAN,MATCH,26069.47,"Clean transaction, no discrepancy."
+TXN100979,CLEAN,MATCH,29118.31,"Clean transaction, no discrepancy."
+TXN100980,CLEAN,MATCH,33726.79,"Clean transaction, no discrepancy."
+TXN100981,CLEAN,MATCH,33311.25,"Clean transaction, no discrepancy."
+TXN100982,CLEAN,MATCH,29142.91,"Clean transaction, no discrepancy."
+TXN100983,MISSING_BANK_CREDIT,EXCEPTION,19051.49,Settlement was booked but no corresponding bank credit was ever received.
+TXN100984,FEE_MISMATCH,EXCEPTION,20711.32,Applied fee 711.77 does not match configured fee schedule (463.43).
+TXN100985,DATE_ANOMALY_NORMAL,MATCH,6108.97,Settlement delayed by a few days; within normal processing window.
+TXN100986,MISSING_SETTLEMENT,EXCEPTION,14923.86,Settlement record missing entirely.
+TXN100987,CLEAN,MATCH,51259.48,"Clean transaction, no discrepancy."
+TXN100988,CLEAN,MATCH,2653.9,"Clean transaction, no discrepancy."
+TXN100989,CLEAN,MATCH,1668.64,"Clean transaction, no discrepancy."
+TXN100990,CLEAN,MATCH,33458.98,"Clean transaction, no discrepancy."
+TXN100991,CLEAN,MATCH,40855.25,"Clean transaction, no discrepancy."
+TXN100992,CLEAN,MATCH,36303.39,"Clean transaction, no discrepancy."
+TXN100993,CLEAN,MATCH,49590.87,"Clean transaction, no discrepancy."
+TXN100994,CLEAN,MATCH,17728.85,"Clean transaction, no discrepancy."
+TXN100995,CLEAN,MATCH,35071.14,"Clean transaction, no discrepancy."
+TXN100996,TAX_MISMATCH,EXCEPTION,12607.53,Applied GST 0 does not match expected GST (56.74).
+TXN100997,CLEAN,MATCH,38842.37,"Clean transaction, no discrepancy."
+TXN100998,CLEAN,MATCH,36689.25,"Clean transaction, no discrepancy."
+TXN100999,DATE_ANOMALY_NORMAL,MATCH,36898.4,Settlement delayed by a few days; within normal processing window.

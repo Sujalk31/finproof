@@ -1,0 +1,17 @@
+# Core pipeline
+pandas>=2.0
+numpy>=1.24
+
+# Backend API
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+python-multipart>=0.0.9
+python-dotenv>=1.0
+
+# LLM (Groq free tier — OpenAI-compatible client)
+openai>=1.30
+requests>=2.31
+
+# Optional: only needed if you still want to run the old Streamlit dashboard
+# streamlit>=1.30

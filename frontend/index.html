@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FinProof — Evidence-Based AI Finance Controller</title>
+<link rel="stylesheet" href="/static/style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script>
+  // Some networks (campus/corporate wifi, some hosting sandboxes) block
+  // cdnjs.cloudflare.com specifically while allowing other CDNs. If the
+  // primary tag above failed to load, fall back through two mirrors before
+  // giving up -- app.js already handles a total Chart.js failure gracefully
+  // (see safeRender()), this just makes that fallback less likely to trigger.
+  (function tryLoadChart(mirrors) {
+    if (typeof Chart !== "undefined" || mirrors.length === 0) return;
+    var src = mirrors[0];
+    var s = document.createElement("script");
+    s.src = src;
+    s.onerror = function () { tryLoadChart(mirrors.slice(1)); };
+    document.head.appendChild(s);
+  })([
+    "https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js",
+    "https://unpkg.com/chart.js@4.4.4/dist/chart.umd.min.js",
+  ]);
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">FP</span>
+    <div>
+      <h1>FinProof</h1>
+      <p class="tagline">Don't just reconcile. Prove it.</p>
+    </div>
+  </div>
+  <div class="topbar-actions">
+    <span id="llmBadge" class="badge badge-muted">checking LLM…</span>
+    <button id="runBtn" class="btn btn-primary">Run pipeline</button>
+  </div>
+</header>
+
+<main>
+  <section id="emptyState" class="empty-state hidden">
+    <h2>No results yet</h2>
+    <p>Click <strong>Run pipeline</strong> to generate synthetic data and reconcile it.</p>
+  </section>
+
+  <section id="dashboard" class="hidden">
+
+    <section class="metric-grid">
+      <div class="metric-card"><span class="metric-label">Records processed</span><span class="metric-value" id="mRecords">–</span></div>
+      <div class="metric-card"><span class="metric-label">Resolution rate</span><span class="metric-value" id="mResolution">–</span></div>
+      <div class="metric-card"><span class="metric-label">Accuracy vs ground truth</span><span class="metric-value" id="mAccuracy">–</span></div>
+      <div class="metric-card"><span class="metric-label">False resolution rate</span><span class="metric-value" id="mFalseRes">–</span></div>
+      <div class="metric-card"><span class="metric-label">Throughput</span><span class="metric-value" id="mThroughput">–</span></div>
+    </section>
+
+    <section class="metric-grid metric-grid-3">
+      <div class="metric-card metric-card-alt"><span class="metric-label">Amount processed</span><span class="metric-value" id="mAmtProcessed">–</span></div>
+      <div class="metric-card metric-card-alt"><span class="metric-label">Amount reconciled</span><span class="metric-value" id="mAmtReconciled">–</span></div>
+      <div class="metric-card metric-card-alt"><span class="metric-label">Amount unresolved</span><span class="metric-value" id="mAmtUnresolved">–</span></div>
+    </section>
+
+    <section class="chart-row">
+      <div class="panel">
+        <h3>Decision routing</h3>
+        <canvas id="routingChart" height="220"></canvas>
+      </div>
+      <div class="panel">
+        <h3>Exceptions by root cause</h3>
+        <canvas id="exceptionChart" height="220"></canvas>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Highest-risk merchants</h3>
+      <table class="data-table" id="riskTable">
+        <thead><tr><th>Merchant</th><th>Exception count</th><th>Exception amount</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h3>Transactions</h3>
+      <div class="filter-bar">
+        <input id="searchInput" type="text" placeholder="Search transaction id…" />
+        <select id="statusFilter">
+          <option value="">All statuses</option>
+          <option value="AUTO_RESOLVED">Auto-resolved</option>
+          <option value="AI_REVIEW">AI review</option>
+          <option value="HUMAN_REVIEW">Human review</option>
+        </select>
+        <select id="labelFilter">
+          <option value="">All labels</option>
+          <option value="MATCH">Match</option>
+          <option value="EXCEPTION">Exception</option>
+        </select>
+        <select id="typeFilter"><option value="">All discrepancy types</option></select>
+      </div>
+      <table class="data-table" id="txnTable">
+        <thead>
+          <tr>
+            <th>Transaction</th><th>Merchant</th><th>Amount</th>
+            <th>Type</th><th>Label</th><th>Status</th><th>Confidence</th><th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="pagination">
+        <button id="prevPage" class="btn btn-secondary">Prev</button>
+        <span id="pageInfo">Page 1</span>
+        <button id="nextPage" class="btn btn-secondary">Next</button>
+      </div>
+    </section>
+  </section>
+</main>
+
+<!-- "Why?" evidence drill-down modal -->
+<div id="evidenceModal" class="modal hidden">
+  <div class="modal-content">
+    <button class="modal-close" id="closeModal">&times;</button>
+    <h2 id="evTitle">Transaction</h2>
+    <div id="evBody"></div>
+  </div>
+</div>
+
+<!-- Chatbot widget -->
+<div id="chatWidget" class="chat-widget">
+  <button id="chatToggle" class="chat-toggle">💬 Ask FinProof</button>
+  <div id="chatPanel" class="chat-panel hidden">
+    <div class="chat-header">
+      <span>FinProof Assistant</span>
+      <button id="chatClose">&times;</button>
+    </div>
+    <div id="chatMessages" class="chat-messages">
+      <div class="chat-msg chat-msg-bot">Hi! Ask me about this batch — e.g. "Why was TXN100482 escalated?" or "what's our top exception type?"</div>
+    </div>
+    <form id="chatForm" class="chat-input-row">
+      <input id="chatInput" type="text" placeholder="Ask a question…" autocomplete="off" />
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
