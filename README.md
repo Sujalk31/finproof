@@ -10,10 +10,29 @@ cross-source evidence, and safely auto-resolves only the cases it can
 explanation of what it does and doesn't know.
 
 This build implements the full **Track 04 — AI Finance Controller** spec:
-a FastAPI backend + browser dashboard, a Groq-hosted open-weight LLM for
-investigation and chat, a ground-truth-evaluated batch pipeline (1,000+
-synthetic transactions), an audit trail, and a chatbot for ad-hoc questions
-about the results.
+a FastAPI backend + browser dashboard, an LLM-powered investigation and
+chat agent, a ground-truth-evaluated batch pipeline (1,000+ synthetic
+transactions), a full audit trail, and a chatbot for ad-hoc questions about
+the results.
+
+---
+
+## Table of contents
+
+1. [What's actually happening, end to end](#1-whats-actually-happening-end-to-end)
+2. [The six data sources](#2-the-six-data-sources)
+3. [Discrepancy types the engine detects](#3-discrepancy-types-the-engine-detects)
+4. [Confidence & routing](#4-confidence--routing)
+5. [The AI Investigation Agent — where the LLM is (and isn't) used](#5-the-ai-investigation-agent--where-the-llm-is-and-isnt-used)
+6. [The chatbot](#6-the-chatbot)
+7. [Project structure](#7-project-structure)
+8. [Getting it from GitHub and running it](#8-getting-it-from-github-and-running-it)
+9. [Configuring the LLM](#9-configuring-the-llm)
+10. [API reference](#10-api-reference)
+11. [Metrics explained](#11-metrics-explained-what-outputreportjson-contains)
+12. [Tuning the confidence thresholds](#12-tuning-the-confidence-thresholds)
+13. [Design principles this project follows](#13-design-principles-this-project-follows)
+14. [Extending this project](#14-extending-this-project)
 
 ---
 
@@ -36,7 +55,7 @@ about the results.
                               3. DISCREPANCY DETECTION
                recompute expected fee/tax/net from fee_config and
                compare against what was actually settled (pure math,
-               no LLM — see plan section 25)
+               no LLM involved)
                                         ▼
                               4. CROSS-SOURCE CHECKS
               if settlement math is clean, still verify: did the bank
@@ -47,9 +66,9 @@ about the results.
                                         │ yes
                                         ▼
                               5. AI INVESTIGATION AGENT
-                 Groq-hosted LLM interprets the evidence bundle and
-                 explains the gap in plain language — but NEVER does the
-                 arithmetic itself (Python already computed every number)
+                 An LLM interprets the evidence bundle and explains the
+                 gap in plain language — but NEVER does the arithmetic
+                 itself (Python already computed every number)
                                         ▼
                               6. CONFIDENCE ENGINE
                      0-100 score per transaction based on how completely
@@ -73,10 +92,11 @@ LLM and hope" function.
 
 ---
 
-## 2. Why six data sources instead of two
+## 2. The six data sources
 
-Most reconciliation demos only compare a payment to a settlement. FinProof
-also checks:
+FinProof reconciles across six independent sources, so it can point to
+*which* source disagrees rather than just reporting "something doesn't
+match":
 
 | Source | File | What it proves |
 |---|---|---|
@@ -89,8 +109,8 @@ also checks:
 
 A settlement can look perfectly reconciled against the payment and still be
 wrong — the bank might never have received the money, or the ledger might
-have booked a different figure. FinProof catches both, and reports *which
-source* disagrees, not just that "something doesn't match."
+have booked a different figure. FinProof catches both, and reports *which*
+source disagrees.
 
 ---
 
@@ -136,18 +156,16 @@ routed (`agent/decision.py`):
 | 70–94% | `AI_REVIEW` | AI has an explanation, but a human should skim it |
 | < 70% | `HUMAN_REVIEW` | Evidence is genuinely insufficient — **the system says "I don't know" rather than guessing** |
 
-This honest-failure behavior (plan section 15) is the whole point of the
-project: a wrong auto-resolution in finance is far more expensive than an
-escalation.
+This honest-failure behavior is the whole point of the project: a wrong
+auto-resolution in finance is far more expensive than an escalation.
 
 ---
 
-## 5. The AI Investigation Agent — and where the LLM is (and isn't) used
+## 5. The AI Investigation Agent — where the LLM is (and isn't) used
 
 Only rows flagged `needs_investigation=True` reach the LLM — everything
 that can be explained by deterministic math never touches it, which keeps
-cost, latency, and hallucination risk down (plan section 7 "Level 4" /
-section 25).
+cost, latency, and hallucination risk down.
 
 **The LLM is used for:** interpreting an evidence bundle it cannot fully
 explain and writing a plain-language explanation, and for the chatbot.
@@ -159,43 +177,41 @@ and `agent/investigator.py` **recomputes `unexplained_amount` in Python
 after the LLM call** rather than trusting whatever number the model wrote —
 so a hallucinated figure can never leak into the report.
 
-### Groq integration
+### How the LLM client works (`agent/llm_client.py`)
 
-FinProof calls Groq's free hosted inference API
-([console.groq.com](https://console.groq.com)), which exposes an
-OpenAI-compatible `/openai/v1/chat/completions` endpoint. Default model:
+FinProof calls out to a small, ordered chain of **OpenAI-compatible**
+hosted-inference providers, and automatically falls through to the next
+one if a call fails for any reason (bad model name, account not
+provisioned, rate limit, network error, etc.):
 
-```
-llama-3.3-70b-versatile
-```
+1. **NVIDIA NIM** ([build.nvidia.com](https://build.nvidia.com)) — primary provider
+2. **Groq** ([console.groq.com](https://console.groq.com)) — secondary fallback provider
+3. **Deterministic rule-based logic** — final fallback, handled by the
+   caller (`agent/investigator.py` / `agent/chatbot.py`), not by the LLM
+   client itself
 
-Groq's free tier needs no credit card and works the moment you generate a
-key — no separate account-activation step. (An earlier version of this
-project used NVIDIA's build.nvidia.com NIM API instead; it was dropped
-after hitting a currently-unresolved NVIDIA platform bug where valid keys
-404 with `"Function ... Not found for account"` until NVIDIA support
-manually enables a permission — see the NVIDIA Developer Forums, category
-NVIDIA NIM > Access/Accounts, for many open reports of the same issue.)
-You can swap models via the `GROQ_MODEL` env var (see `.env.example`) —
-e.g. `llama-3.1-8b-instant` for a much higher free daily request cap at
-slightly lower quality.
+You can configure either provider alone, both, or neither. If **no**
+provider is configured (or every configured provider fails, including
+hitting a free-tier rate limit), everything falls back to a transparent,
+rule-based responder — **the whole system, including the chatbot, works
+fully offline with zero API keys.** This is by design: a finance
+controller must never go down just because an LLM provider is
+unreachable.
 
-The client lives in `agent/llm_client.py` and is shared by the
-investigator agent and the chatbot. **If `GROQ_API_KEY` is not set (or
-a call fails for any reason, including hitting the free-tier daily/rate
-limit), everything falls back to a transparent, deterministic rule-based
-responder** — the whole system, including the chatbot, works fully offline
-with zero API keys. This is by design: a finance controller must never go
-down just because an LLM provider is unreachable.
+Raw provider errors (HTTP codes, internal model IDs, JSON error bodies)
+are never surfaced directly to the user — `llm_client.py` classifies them
+into a short, stable, human-readable reason (e.g. "rate limited (too many
+requests)", "authentication failed (check the API key)") that's safe to
+show in the UI and log to the audit trail.
+
+See [section 9](#9-configuring-the-llm) for exactly how to set this up.
 
 ---
 
 ## 6. The chatbot
 
 A floating chat widget on the dashboard lets you ask about the *current
-batch's results* — not a generic "ask anything" bot (the plan explicitly
-calls that out as a weak, undifferentiated project on its own — section
-28).
+batch's results* — not a generic "ask anything" bot.
 
 Examples:
 - `"Why was TXN100482 escalated?"` → looks up that exact transaction's
@@ -208,10 +224,11 @@ Examples:
 
 Implementation: `agent/chatbot.py`. It regex-detects a `TXN\d+` pattern in
 the message to decide whether to ground the answer in one transaction's
-evidence or in the aggregate report, then either calls the Groq LLM with
-that context or, if no API key is configured, answers with a small
-keyword-matching rule engine over the same JSON (`_rule_based_answer`) —
-so the chatbot is genuinely usable with zero external dependencies.
+evidence or in the aggregate report, then either calls the LLM (via
+`agent/llm_client.py`) with that context or, if no provider is configured,
+answers with a small keyword-matching rule engine over the same JSON
+(`_rule_based_answer`) — so the chatbot is genuinely usable with zero
+external dependencies.
 
 ---
 
@@ -235,7 +252,7 @@ finproof/
 │   ├── discrepancy.py        # Fee/tax/date/amount root-cause classification
 │   └── cross_source.py       # Bank / ledger / tax cross-checks
 ├── agent/
-│   ├── llm_client.py         # Groq client (OpenAI-compatible), shared
+│   ├── llm_client.py         # Multi-provider LLM client (NVIDIA -> Groq -> caller fallback)
 │   ├── investigator.py       # AI investigation agent (LLM + rule-based fallback)
 │   ├── evidence.py           # Builds the evidence bundle used everywhere ("Why?")
 │   ├── confidence.py         # 0–100 confidence scoring per discrepancy type
@@ -256,33 +273,33 @@ finproof/
 
 ---
 
-## 8. Setup
+## 8. Getting it from GitHub and running it
 
-### 8.1 Install
+### 8.1 Clone the repo
 
 ```bash
+git clone https://github.com/<your-username>/finproof.git
 cd finproof
+```
+
+(Replace `<your-username>/finproof` with the actual GitHub path you
+uploaded this project to.)
+
+### 8.2 Create a virtual environment and install dependencies
+
+```bash
 python3 -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 8.2 Configure the LLM (optional but recommended)
+### 8.3 (Optional but recommended) Configure the LLM
 
-1. Go to [build.nvidia.com](https://build.nvidia.com), open any model page,
-   click **Get API Key**.
-2. Copy `.env.example` to `.env` and paste your key:
+FinProof runs perfectly well with **zero configuration** — see
+[section 9](#9-configuring-the-llm) if you want richer, LLM-generated
+explanations instead of the deterministic rule-based fallback.
 
-```bash
-cp .env.example .env
-# edit .env and set:
-# GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxx
-```
-
-Without a key, everything still runs — the investigator and chatbot use
-their deterministic rule-based fallbacks instead of the LLM.
-
-### 8.3 Generate data + run the pipeline once from the CLI
+### 8.4 Generate data + run the pipeline once from the CLI
 
 ```bash
 python3 generator/generate_data.py --n 1000 --out data
@@ -290,26 +307,102 @@ python3 pipeline.py --data data --out output
 ```
 
 This prints the full finance controller report to the terminal and writes
-everything to `output/` (see section 10).
+everything to `output/` (see [section 11](#11-metrics-explained-what-outputreportjson-contains)).
 
-### 8.4 Start the backend + dashboard
+### 8.5 Start the backend + dashboard
 
 ```bash
 uvicorn backend.main:app --reload --port 8000
 ```
 
-Open **http://localhost:8000**. If you already ran the pipeline via the
-CLI, the dashboard loads immediately. Otherwise click **Run pipeline** in
-the top bar (it regenerates 1,000 transactions and reconciles them, with a
-live progress indicator via `/api/pipeline/status`).
+Open **http://localhost:8000** in your browser. If you already ran the
+pipeline via the CLI, the dashboard loads immediately. Otherwise click
+**Run pipeline** in the top bar (it regenerates 1,000 transactions and
+reconciles them, with a live progress indicator via
+`/api/pipeline/status`).
 
 ---
 
-## 9. API reference
+## 9. Configuring the LLM
+
+This step is optional — without it, the investigator and chatbot simply
+use their deterministic rule-based fallbacks instead of an LLM, and the
+rest of the system behaves identically.
+
+### 9.1 Copy the example environment file
+
+```bash
+cp .env.example .env
+```
+
+### 9.2 Pick a provider (or both)
+
+FinProof tries **NVIDIA NIM first, then Groq**, then falls back to
+rule-based logic. You only need to fill in the provider(s) you actually
+want to use.
+
+**Option A — Groq (fastest to set up, free, no credit card required)**
+
+1. Go to [console.groq.com/keys](https://console.groq.com/keys) and
+   generate a free API key.
+2. Add it to your `.env`:
+
+```bash
+GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxx
+GROQ_MODEL=openai/gpt-oss-120b
+GROQ_BASE_URL=https://api.groq.com/openai/v1
+```
+
+`GROQ_MODEL` defaults to `openai/gpt-oss-120b` if you leave it unset —
+that's the value already shown above and in `.env.example`. You can swap
+in any other chat model available on your Groq account (e.g.
+`llama-3.1-8b-instant` for a higher free daily request cap at slightly
+lower quality).
+
+**Option B — NVIDIA NIM (tried first if configured)**
+
+1. Go to [build.nvidia.com](https://build.nvidia.com), open any model
+   page, and click **Get API Key**.
+2. Add it to your `.env`:
+
+```bash
+NVIDIA_API_KEY=nvapi-xxxxxxxxxxxxxxxx
+NVIDIA_MODEL=nvidia/llama-3.1-nemotron-70b-instruct
+NVIDIA_BASE_URL=https://integrate.api.nvidia.com/v1
+```
+
+**Using both:** if both `NVIDIA_API_KEY` and `GROQ_API_KEY` are set,
+every LLM call tries NVIDIA first and automatically falls through to Groq
+if the NVIDIA call fails for any reason (bad model name, account not yet
+provisioned, rate limit, network error, etc.) — you get an extra layer of
+resilience for free.
+
+**Using neither:** leave both keys blank (or delete `.env` entirely) and
+the investigator/chatbot use their rule-based fallback paths. Nothing else
+about the system changes — the pipeline, dashboard, and API all work the
+same way.
+
+### 9.3 Other environment variables
+
+```bash
+# Where the FastAPI backend looks for data / writes output (defaults shown)
+FINPROOF_DATA_DIR=data
+FINPROOF_OUT_DIR=output
+FINPROOF_MAX_LLM_INVESTIGATIONS=50
+```
+
+`FINPROOF_MAX_LLM_INVESTIGATIONS` caps how many rows in a single batch are
+allowed to call the LLM, so a single run can never blow past a free-tier
+rate limit or run away in cost — everything past the cap is handled by the
+rule-based fallback instead.
+
+---
+
+## 10. API reference
 
 | Method | Path | Purpose |
 |---|---|---|
-| GET | `/api/health` | Liveness check + whether the Groq LLM is configured |
+| GET | `/api/health` | Liveness check + whether an LLM provider is configured |
 | POST | `/api/pipeline/run` | Kick off a pipeline run (`{"regenerate": bool, "n_records": int}`) |
 | GET | `/api/pipeline/status` | Poll progress of the running job |
 | GET | `/api/report` | Full finance controller report (metrics, accuracy, breakdowns) |
@@ -324,33 +417,33 @@ Interactive OpenAPI docs are auto-served at `/docs`.
 
 ---
 
-## 10. Metrics explained (what `output/report.json` contains)
+## 11. Metrics explained (what `output/report.json` contains)
 
 - **Record-level**: records processed, matched, exceptions, and the
   auto-resolved / AI-review / human-review split, plus `resolution_rate`
   (auto-resolved + AI-review) and `match_rate`.
 - **Amount-level**: total, reconciled, and unresolved ₹ amounts —
   because a finance controller has to reason about money, not just row
-  counts (plan section 20).
+  counts.
 - **Accuracy vs ground truth**: accuracy, precision/recall/F1 on the
   `EXCEPTION` class, and a confusion matrix — computed by comparing final
   decisions to `data/ground_truth.csv`, a file the reconciliation engine
-  itself never reads (plan section 10).
+  itself never reads.
 - **False resolution rate**: of everything the system `AUTO_RESOLVED`, what
   fraction was actually wrong against ground truth. This is the single
-  most important safety metric for an autonomous finance controller (plan
-  section 19) — a real run of this project measures **0.0%** at the
-  default confidence thresholds.
+  most important safety metric for an autonomous finance controller — a
+  real run of this project measures **0.0%** at the default confidence
+  thresholds.
 - **Throughput**: measured wall-clock time and records/sec for the batch
-  (never invented — plan section 21).
-- **Exception breakdown & merchant risk ranking**: root-cause clustering
-  (plan section 17) — e.g. "fee mismatches account for 11% of exceptions"
-  or "merchant M003 accounts for the most exceptions."
+  (never invented).
+- **Exception breakdown & merchant risk ranking**: root-cause clustering —
+  e.g. "fee mismatches account for 11% of exceptions" or "merchant M003
+  accounts for the most exceptions."
 
 All of this is also written to `output/report.txt` (human-readable),
 `output/reconciled_results.csv`, `output/row_level_results.csv`,
-`output/audit_trail.json` (every decision with its evidence, plan section
-22), and `output/finproof.db` (SQLite).
+`output/audit_trail.json` (every decision with its evidence), and
+`output/finproof.db` (SQLite).
 
 ### A real measured run (1,000 transactions, rule-based fallback, no API key)
 
@@ -377,7 +470,7 @@ in this repo, not an asserted figure.)
 
 ---
 
-## 11. Tuning the confidence thresholds
+## 12. Tuning the confidence thresholds
 
 `agent/confidence.py` defines:
 
@@ -386,40 +479,37 @@ AUTO_RESOLVE_THRESHOLD = 95.0
 AI_REVIEW_THRESHOLD = 70.0
 ```
 
-These are starting points, not claimed-optimal values (plan section 14
-explicitly warns against asserting thresholds without validation). To tune
-them: run the pipeline, inspect `output/evaluation.json`'s
-`false_resolution_rate` and `confusion_matrix`, adjust the thresholds, and
-re-run — the ground-truth evaluation gives you an objective signal instead
-of guessing.
+These are starting points, not claimed-optimal values. To tune them: run
+the pipeline, inspect `output/evaluation.json`'s `false_resolution_rate`
+and `confusion_matrix`, adjust the thresholds, and re-run — the
+ground-truth evaluation gives you an objective signal instead of guessing.
 
 ---
 
-## 12. Design principles this project follows
+## 13. Design principles this project follows
 
 1. **Deterministic first, LLM last.** Exact ID matching → composite
-   matching → fuzzy matching → LLM, in that order (plan section 7). The
-   LLM only ever sees the minority of rows that survive all deterministic
-   checks.
+   matching → fuzzy matching → LLM, in that order. The LLM only ever sees
+   the minority of rows that survive all deterministic checks.
 2. **The LLM never does arithmetic.** Every number it's shown was computed
    in Python; every number it outputs is discarded in favor of the
    Python-computed figure.
 3. **Honest failure over confident guessing.** Below the confidence
    threshold, the system says "human review required" instead of forcing a
-   decision (plan section 15).
+   decision.
 4. **Everything is measured, nothing is claimed.** Accuracy, false
    resolution rate, and throughput are all computed from a real batch run
    against real ground truth, not asserted.
 5. **Full audit trail.** Every decision, its confidence, its evidence, and
-   which agent (rule-based or LLM) made it are logged (plan section 22).
+   which agent (rule-based or LLM) made it are logged.
 6. **Works with zero API keys.** The rule-based fallback for both the
    investigator and the chatbot means the whole system is demoable
-   offline; the Groq LLM makes the explanations richer, not the system
-   dependent.
+   offline; an LLM provider makes the explanations richer, not the system
+   dependent on it.
 
 ---
 
-## 13. Extending this project
+## 14. Extending this project
 
 - Swap `database/models.py`'s SQLite for Postgres for multi-user/production use.
 - Add a real adjustments/chargebacks source table so `UNKNOWN_MISMATCH`
